@@ -47,7 +47,6 @@ cd $DOTFILES_ROOT/tools
 virtualenv -q -p `which python3` venv
 . venv/bin/activate
 pip install -q -r requirements.txt
-cp -n .env.sample .env
 
 if [ ! -f $(git rev-parse --show-toplevel)/.git/hooks/pre-commit ]; then
     pre-commit install
