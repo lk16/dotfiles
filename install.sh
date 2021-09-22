@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NOTES_ROOT_FOLDER=$(cd $(dirname $(realpath $0))/..; pwd)
+NOTES_ROOT_FOLDER=$(cd $(dirname $(realpath $0)); pwd)
 
 if ! which "virtualenv" > /dev/null; then
     echo "Could not find executable virtualenv"

@@ -3,7 +3,7 @@
 
 ## Setup dot files and tools
 * Clone this repo
-* From repo root run `./tools/install.sh`
+* From repo root run `./install.sh`
 
 ### How to run interactively
 ```sh
@@ -19,7 +19,11 @@ List open merge requests
 --
 
 ## TODO
-- [ ] split off `dotfiles` into separate repo
+- [x] split off `dotfiles` into separate repo
+- [ ] rename `NOTES_ROOT_FOLDER` to `DOTFILES_ROOT`
+- [ ] setup `NOTES_ROOT`
+- [ ] remove `tools/.env.sample` from repo and `install.sh`
+- [ ] confirm `install.sh` still works
 - [ ] fix broken daily cron
 - [ ] add better description in this README.md
 - [ ] add howto for markdown, marp and [mermaid](https://mermaid-js.github.io/mermaid/#/)
