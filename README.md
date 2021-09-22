@@ -1,53 +1,34 @@
 
 # Notes
 
-## Setup dot files and tools
+This repo contains:
+* `dotfiles`: dotfiles and other config files
+* `howto`: commands and tricks for future use, somewhat
+* `tools`: a few of python scripts that do
+
+
+## Setup dotfiles and tools
 * Clone this repo
 * From repo root run `./install.sh`
 
-### How to run interactively
-```sh
-tools some-command
-```
+## Tools
+These are run with `tools <command>`
+* `check-common-tools`: check if my commonly used tools are installed
+* `check-external-dependencies`: check if external binaries that this project runs are installed
+* `csvcut`: very basic verison of UNIX `cut` but for CSV files
+* `get-statusbar`: generate tmux statusbar items, see more info below
+* `highlight`: reads lines from stdin and outputs those lines on stdout highlighting terms in various colors specified by flags
+* `new-daily-notes`: creates a new notes file from yesterday's notes
+* `vscode-extensions`: list/edit/save a list of VS Code extensions
+* `tmux-broadcast`: send a command to every window/pane in a tmux session
 
-## Commands
-
-### MRs
-List open merge requests
-[Gitlab API](https://docs.gitlab.com/ee/api/merge_requests.html)
-
---
-
-## TODO
-- [x] split off `dotfiles` into separate repo
-- [x] rename `NOTES_ROOT_FOLDER` to `DOTFILES_ROOT`
-- [x] setup `NOTES_ROOT`
-- [x] remove `tools/.env.sample` from repo and `install.sh`
-- [x] don't use symlinks for `.bash_aliases` and `.bash_functions`
-- [x] use `.sh` extension for `.bash_aliases` and `.bash_functions`
-- [ ] confirm `install.sh` still works
-- [ ] fix broken daily cron
-- [ ] add better description in this README.md
-- [ ] add howto for markdown, marp and [mermaid](https://mermaid-js.github.io/mermaid/#/)
-- [ ] put many useful bash (script) commands in howto
-- [ ] consider adding global git ignore file
-
-
-Status bar items:
-- [ ] add gitlab open MR's during office hours
-- [ ] show unread mails during office hours
-- [ ] CPU usage
-- [ ] Harddisk usage
-
-
-Commands:
-- [x] csv cut
-- [x] tmux broadcast
-
---
+## Tmux status bar items
+* `battery`: displays how much your laptop battery is charged
+* `date`: the current date
+* `spotify`: current spotify song playing: artist and song title. Hidden if spotify is not running.
+* `weather`: current weather
 
 ## Links
-
 - [Markdown viewer browser plugin](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en)
 - [Markdown diagrams](https://mermaid-js.github.io/mermaid/#/)
 - https://peterforgacs.github.io/2017/04/25/Tmux/
