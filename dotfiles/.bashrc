@@ -96,8 +96,8 @@ PS1="\\[${USER_PROMPT_COLOR}\\]\u \W \\[${COLOR_LIGHT_GREEN}\\]\$(parse_git_bran
 trap '[[ -t 1 ]] && tput sgr0' DEBUG
 
 # load these if they exist
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
-[ -f ~/.bash_functions ] && source ~/.bash_functions
+[ -f $DOTFILES_ROOT/dotfiles/.bash_aliases.sh ] && source $DOTFILES_ROOT/dotfiles/.bash_aliases.sh
+[ -f $DOTFILES_ROOT/dotfiles/.bash_functions.sh ] && source $DOTFILES_ROOT/dotfiles/.bash_functions.sh
 [ -f ~/.server_aliases.sh ] && source ~/.server_aliases.sh
 
 # make sure ssh key forwarding works

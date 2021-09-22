@@ -16,8 +16,6 @@ fi
 
 dotfiles=(
     ".bashrc"
-    ".bash_aliases"
-    ".bash_functions"
     ".direnvrc"
     ".tmux.conf"
     ".tmux_statusbar.sh"
