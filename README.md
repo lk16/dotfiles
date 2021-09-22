@@ -20,9 +20,11 @@ List open merge requests
 
 ## TODO
 - [x] split off `dotfiles` into separate repo
-- [ ] rename `NOTES_ROOT_FOLDER` to `DOTFILES_ROOT`
-- [ ] setup `NOTES_ROOT`
+- [x] rename `NOTES_ROOT_FOLDER` to `DOTFILES_ROOT`
+- [x] setup `NOTES_ROOT`
 - [ ] remove `tools/.env.sample` from repo and `install.sh`
+- [ ] don't use symlinks for `.bash_aliases` and `.bash_functions`
+- [ ] use `.sh` extension for `.bash_aliases` and `.bash_functions`
 - [ ] confirm `install.sh` still works
 - [ ] fix broken daily cron
 - [ ] add better description in this README.md

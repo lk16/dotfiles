@@ -6,7 +6,7 @@ function bright() {
 
 function tools(){
     (
-        cd $NOTES_ROOT_FOLDER/tools
+        cd $DOTFILES_ROOT/tools
         . venv/bin/activate
         ./manage.py "$@"
     )

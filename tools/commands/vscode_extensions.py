@@ -4,9 +4,9 @@ from typing import List
 import click
 from click.exceptions import ClickException
 from helpers.color import colorize_text
-from helpers.path import NOTES_ROOT_FOLDER
+from helpers.path import DOTFILES_ROOT
 
-VSCODE_EXTENSIONS_PATH = NOTES_ROOT_FOLDER / "dotfiles/.vscode_extensions.txt"
+VSCODE_EXTENSIONS_PATH = DOTFILES_ROOT / "dotfiles/.vscode_extensions.txt"
 
 
 @click.group()

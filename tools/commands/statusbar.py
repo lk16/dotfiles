@@ -10,9 +10,9 @@ from typing import Any, Dict, List, Type
 import click
 import requests
 from helpers.cache import load_cache, store_cache
-from helpers.path import NOTES_ROOT_FOLDER
+from helpers.path import DOTFILES_ROOT
 
-CONFIG_FILE = NOTES_ROOT_FOLDER / "tools/statusbar_conf.json"
+CONFIG_FILE = DOTFILES_ROOT / "tools/statusbar_conf.json"
 
 NEVER_EXPIRES = -1
 

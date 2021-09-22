@@ -1,4 +1,5 @@
 import os
 from pathlib import Path
 
-NOTES_ROOT_FOLDER = Path(os.environ["NOTES_ROOT_FOLDER"])
+DOTFILES_ROOT = Path(os.environ["DOTFILES_ROOT"])
+NOTES_ROOT = Path(os.environ["NOTES_ROOT"])

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NOTES_ROOT_FOLDER=$(cd $(dirname $(realpath $0)); pwd)
+DOTFILES_ROOT=$(cd $(dirname $(realpath $0)); pwd)
 
 if ! which "virtualenv" > /dev/null; then
     echo "Could not find executable virtualenv"
@@ -25,14 +25,14 @@ dotfiles=(
 
 # make symlinks for dotfiles
 for dotfile in "${dotfiles[@]}"; do
-	ln -s $NOTES_ROOT_FOLDER/dotfiles/$dotfile ~/$dotfile
+	ln -s $DOTFILES_ROOT/dotfiles/$dotfile ~/$dotfile
 done
 
 # make symlink for VS Code config separately because target file differs from symlink name
-ln -s $NOTES_ROOT_FOLDER/dotfiles/.vscode.json ~/.config/Code/User/settings.json
+ln -s $DOTFILES_ROOT/dotfiles/.vscode.json ~/.config/Code/User/settings.json
 
 # copy default tmux toolbar conf
-cp -n $NOTES_ROOT_FOLDER/tools/statusbar_conf.json.default $NOTES_ROOT_FOLDER/tools/statusbar_conf.json
+cp -n $DOTFILES_ROOT/tools/statusbar_conf.json.default $DOTFILES_ROOT/tools/statusbar_conf.json
 
 # install tmux plugin manager
 if [ ! -d ~/.tmux/plugins/tpm ]; then
@@ -43,7 +43,7 @@ fi
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 # set up tools
-cd $NOTES_ROOT_FOLDER/tools
+cd $DOTFILES_ROOT/tools
 virtualenv -q -p `which python3` venv
 . venv/bin/activate
 pip install -q -r requirements.txt

@@ -1,9 +1,9 @@
 import json
 from typing import Any
 
-from helpers.path import NOTES_ROOT_FOLDER
+from helpers.path import DOTFILES_ROOT
 
-CACHE_ROOT = NOTES_ROOT_FOLDER / "tools/.cache"
+CACHE_ROOT = DOTFILES_ROOT / "tools/.cache"
 
 
 def load_cache(name: str, default: Any) -> Any:

@@ -38,7 +38,7 @@ alias json="python3 -m json.tool"
 
 alias dps="docker-compose ps"
 
-alias alert="mplayer $NOTES_ROOT_FOLDER/tools/airhorn.mp3 -loop 0 > /dev/null 2>&1"
+alias alert="mplayer $DOTFILES_ROOT/tools/airhorn.mp3 -loop 0 > /dev/null 2>&1"
 
 function bright() {
     for output in $(xrandr | grep ' connected ' | cut -d ' ' -f 1); do

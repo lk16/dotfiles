@@ -4,9 +4,9 @@ from pathlib import Path
 from typing import List
 
 import click
-from helpers.path import NOTES_ROOT_FOLDER
+from helpers.path import NOTES_ROOT
 
-DAILY_NOTES_FOLDER = NOTES_ROOT_FOLDER / "work/daily"
+DAILY_NOTES_FOLDER = NOTES_ROOT / "work/daily"
 DAILY_NOTES_REGEX = re.compile(r"^\d{4}-\d{2}-\d{2}\.md$")
 DAILY_NOTES_SHORTCUT = DAILY_NOTES_FOLDER / "today.md"
 

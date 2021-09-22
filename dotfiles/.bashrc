@@ -2,9 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export NOTES_ROOT_FOLDER=$(cd $(dirname $(readlink -e ~/.bashrc))/..; pwd)
+export DOTFILES_ROOT=$(cd $(dirname $(readlink -e ~/.bashrc))/..; pwd)
 
-# If not running interactively, don't do anything
+[ -f ~/.notes_root ] && export NOTES_ROOT=$(cat ~/.notes_root)
+
+# If not running interactively, don't do anything else
 case $- in
     *i*) ;;
       *) return;;

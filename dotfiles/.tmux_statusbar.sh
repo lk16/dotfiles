@@ -1,5 +1,5 @@
 #!/bin/bash
 source ~/.bashrc
-cd $NOTES_ROOT_FOLDER/tools
+cd $DOTFILES_ROOT/tools
 source ./venv/bin/activate
 ./manage.py get-statusbar
