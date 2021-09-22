@@ -1,0 +1,29 @@
+{
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.wordBasedSuggestionsMode": "matchingDocuments",
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.env": "shellscript",
+        "*.env.*": "shellscript"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.venv/**": true,
+        "**/venv/**": true
+    },
+    "markdown-preview-enhanced.previewTheme": "monokai.css",
+    "markdown-preview-enhanced.mermaidTheme": "dark",
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Monokai",
+    "workbench.editor.untitled.hint": "hidden"
+}

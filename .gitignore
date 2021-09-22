@@ -1,0 +1,6 @@
+tools/.env
+tools/venv
+tools/.cache
+__pycache__/
+statusbar_conf.json
+*.code-workspace

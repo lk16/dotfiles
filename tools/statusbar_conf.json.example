@@ -1,0 +1,14 @@
+{
+    "weather": {
+        "api_key": "your openweathermap key",
+        "location": "Copenhagen,dk"
+    },
+    "statusbar": {
+        "items": [
+            "spotify",
+            "weather",
+            "battery",
+            "date"
+        ]
+    }
+}

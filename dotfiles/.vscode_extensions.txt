@@ -1,0 +1,10 @@
+42Crunch.vscode-openapi
+bpruitt-goddard.mermaid-markdown-syntax-highlighting
+golang.go
+marp-team.marp-vscode
+ms-python.python
+ms-python.vscode-pylance
+ms-vscode.cpptools
+npxms.hide-gitignored
+redhat.vscode-yaml
+shd101wyy.markdown-preview-enhanced

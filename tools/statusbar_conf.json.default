@@ -1,0 +1,9 @@
+{
+    "statusbar": {
+        "items": [
+            "spotify",
+            "battery",
+            "date"
+        ]
+    }
+}
