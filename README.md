@@ -3,7 +3,7 @@
 
 This repo contains:
 * `dotfiles`: dotfiles and other config files
-* `howto`: commands and tricks for future use, somewhat
+* `howto`: commands and tricks, somewhat unorganized
 * `tools`: a few of python scripts that do
 
 
