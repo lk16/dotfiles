@@ -3,8 +3,8 @@
 
 [Mermaid](https://mermaid-js.github.io/mermaid/#/): graphs in markdown
 
-If you're reading this on github and they still haven't implemented mermaid support,
-consider installing [one of these extensions](https://chrome.google.com/webstore/search/mermaid%20diagram).
+> :warning: __If you're reading this on github and they [still](https://github.community/t/feature-request-support-mermaid-markdown-graph-diagrams-in-md-files/1922) haven't implemented mermaid support
+> consider installing [one of these extensions](https://chrome.google.com/webstore/search/mermaid%20diagram).__
 
 ## Pie chart
 
