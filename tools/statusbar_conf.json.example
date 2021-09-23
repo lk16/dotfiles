@@ -5,6 +5,7 @@
     },
     "statusbar": {
         "items": [
+            "machine_stats",
             "spotify",
             "weather",
             "battery",

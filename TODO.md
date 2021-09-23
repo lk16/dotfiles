@@ -8,5 +8,3 @@
 Status bar items:
 - [ ] add gitlab open MR's during office hours
 - [ ] show unread mails during office hours
-- [ ] CPU usage
-- [ ] Harddisk usage

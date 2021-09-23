@@ -32,6 +32,7 @@ These are run with `tools <command>`.
 * `date`: the current date
 * `spotify`: current spotify song playing: artist and song title. Hidden if spotify is not running.
 * `weather`: current weather
+* `machine_stats`: shows CPU and memory usage as well as empty hard disk space
 
 ## Links
 - [Markdown viewer browser plugin](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en)

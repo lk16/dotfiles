@@ -14,7 +14,7 @@ from helpers.path import DOTFILES_ROOT
 
 CONFIG_FILE = DOTFILES_ROOT / "tools/statusbar_conf.json"
 
-NEVER_EXPIRES = -1
+EXPIRES_IMMIEDIATELY = -1
 
 
 class SkipItemException(Exception):
@@ -26,7 +26,7 @@ class StatusBarItem(object):
         self.config = config
 
     def expiry(self) -> int:
-        return NEVER_EXPIRES
+        return EXPIRES_IMMIEDIATELY
 
     def get_text(self) -> str:
         raise NotImplementedError
@@ -112,11 +112,64 @@ class Spotify(StatusBarItem):
         return "{} / {}".format(artist_match.group(1), title_match.group(1))
 
 
+class MachineStats(StatusBarItem):
+    def get_empty_disk_space(self) -> str:
+        process = subprocess.Popen(
+            ["df", "--output=avail", "-h", "/"],
+            stderr=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+        )
+        stdout, _ = process.communicate()
+        return stdout.decode("utf-8").strip().split("\n")[1].strip()
+
+    def get_free_memory(self) -> str:
+        free_memory_line = ""
+
+        with open("/proc/meminfo", "r") as meminfo:
+            for line in meminfo:
+                if "MemFree:" in line:
+                    free_memory_line = line
+
+        free_memory_kb = next(
+            int(word) for word in free_memory_line.split(" ") if word.isdigit()
+        )
+
+        free_memory_mb = free_memory_kb / 1024
+        free_memory_gb = free_memory_mb / 1024
+
+        if free_memory_gb > 2:
+            return f"{int(free_memory_gb)}G"
+
+        return f"{int(free_memory_mb)}M"
+
+    def get_cpu_usage(self) -> str:
+        process = subprocess.Popen(
+            ["top", "-bn", "1"], stderr=subprocess.DEVNULL, stdout=subprocess.PIPE
+        )
+        stdout, _ = process.communicate()
+        stats_line = stdout.decode("utf-8").strip().split("\n")[2]
+
+        cpu_idle_section = stats_line.split(", ")[3]
+
+        cpu_idle = float(cpu_idle_section.split(" ")[0].replace(",", "."))
+        cpu_busy = int(100 - cpu_idle)
+
+        return f"{cpu_busy: 2}%"
+
+    def get_text(self) -> str:
+        disk = self.get_empty_disk_space()
+        memory = self.get_free_memory()
+        cpu = self.get_cpu_usage()
+
+        return f"Cpu {cpu} | Mem {memory} | Disk {disk}"
+
+
 STATUSBAR_ITEMS: Dict[str, Type[StatusBarItem]] = {
     "battery": Battery,
     "date": Date,
     "spotify": Spotify,
     "weather": Weather,
+    "machine_stats": MachineStats,
 }
 
 COLOR_HEADERS = [
@@ -172,7 +225,7 @@ def tmux_statusbar() -> None:
 
         expiry = status_bar_item.expiry()
 
-        if expiry != NEVER_EXPIRES:
+        if expiry != EXPIRES_IMMIEDIATELY:
             next_expiry = int(time.time()) + expiry
             if error:
                 cache[item] = {"expiry": next_expiry, "text": "", "error": True}

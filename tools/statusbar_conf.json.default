@@ -1,6 +1,7 @@
 {
     "statusbar": {
         "items": [
+            "machine_stats",
             "spotify",
             "battery",
             "date"
