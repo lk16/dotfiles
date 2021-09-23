@@ -20,6 +20,7 @@ COMMON_TOOLS = [
     "git",
     "go",
     "htop",
+    "marp",
     "nano",
     "pre-commit",
     "poetry",

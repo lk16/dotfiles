@@ -13,7 +13,6 @@ function tools(){
 }
 
 function csvcut(){ tools csvcut $@; }
-function confirm(){ tools confirm $@; }
 function highlight(){ tools highlight $@; }
 function mrs(){ tools mrs $@; }
 function mr(){ tools mr $@; }

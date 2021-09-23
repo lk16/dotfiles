@@ -1,18 +1,26 @@
 
-# Notes
+# Dotfiles
 
 This repo contains:
-* `dotfiles`: dotfiles and other config files
+* `dotfiles`: actual dotfiles and other config files
 * `howto`: commands and tricks, somewhat unorganized
 * `tools`: a few of python scripts that do
 
-
 ## Setup dotfiles and tools
+The next section explains what the installation script does.
+
 * Clone this repo
 * From repo root run `./install.sh`
 
+
+
+
+The install script makes symlinks to the dotfiles in the cloned repo. That way all tracked files stay in the same folder, while applications (such as `bash`) can find the dotfiles where they are expected to be (such as `~/.bashrc`).
+
+The install script also sets up a virtual environment for the tools.
+
 ## Tools
-These are run with `tools <command>`
+These are run with `tools <command>`.
 * `check-common-tools`: check if my commonly used tools are installed
 * `check-external-dependencies`: check if external binaries that this project runs are installed
 * `csvcut`: very basic verison of UNIX `cut` but for CSV files
