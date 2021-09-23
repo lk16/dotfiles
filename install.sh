@@ -18,7 +18,6 @@ dotfiles=(
     ".bashrc"
     ".direnvrc"
     ".tmux.conf"
-    ".tmux_statusbar.sh"
 )
 
 # make symlinks for dotfiles
