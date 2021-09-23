@@ -5,8 +5,8 @@ from commands.check_dependencies import check_common_tools, check_external_depen
 from commands.csvcut import csvcut
 from commands.daily_notes import new_daily_notes
 from commands.highlight import highlight
-from commands.statusbar import get_statusbar
 from commands.tmux_broadcast import tmux_broadcast
+from commands.tmux_statusbar import tmux_statusbar
 from commands.vscode_extensions import vscode_extensions
 
 
@@ -18,7 +18,7 @@ def cli() -> None:
 cli.add_command(check_external_dependencies)
 cli.add_command(check_common_tools)
 cli.add_command(csvcut)
-cli.add_command(get_statusbar)
+cli.add_command(tmux_statusbar)
 cli.add_command(highlight)
 cli.add_command(new_daily_notes)
 cli.add_command(tmux_broadcast)

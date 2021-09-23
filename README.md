@@ -12,9 +12,6 @@ The next section explains what the installation script does.
 * Clone this repo
 * From repo root run `./install.sh`
 
-
-
-
 The install script makes symlinks to the dotfiles in the cloned repo. That way all tracked files stay in the same folder, while applications (such as `bash`) can find the dotfiles where they are expected to be (such as `~/.bashrc`).
 
 The install script also sets up a virtual environment for the tools.

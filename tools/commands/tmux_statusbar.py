@@ -141,7 +141,7 @@ def get_statusbar_item_text(
 
 
 @click.command()
-def get_statusbar() -> None:
+def tmux_statusbar() -> None:
     config = json.load(open(CONFIG_FILE, "r"))
 
     cache = load_cache("statusbar", {})
