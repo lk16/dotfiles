@@ -14,6 +14,7 @@ EXTERNAL_DEPENDENCIES = [
 ]
 
 COMMON_TOOLS = [
+    "dbeaver",
     "code",
     "docker",
     "docker-compose",
@@ -26,6 +27,14 @@ COMMON_TOOLS = [
     "poetry",
     "sudo",
     "tmux",
+]
+
+MULTIMEDIA = [
+    "brave-browser",
+    "discord",
+    "signal-desktop",
+    "spotify",
+    "vlc",
 ]
 
 
@@ -43,16 +52,19 @@ def check_dependencies(dependencies: List[str]) -> int:
             print(colorize_text("MISSING", "red"))
             exit_code = 1
 
-    return exit_code
+    exit(exit_code)
 
 
 @click.command()
 def check_external_dependencies():
-    exit_code = check_dependencies(EXTERNAL_DEPENDENCIES)
-    exit(exit_code)
+    check_dependencies(EXTERNAL_DEPENDENCIES)
 
 
 @click.command()
 def check_common_tools():
-    exit_code = check_dependencies(COMMON_TOOLS)
-    exit(exit_code)
+    check_dependencies(COMMON_TOOLS)
+
+
+@click.command()
+def check_multimedia():
+    check_dependencies(MULTIMEDIA)

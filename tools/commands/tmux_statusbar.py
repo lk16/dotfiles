@@ -151,8 +151,12 @@ class MachineStats(StatusBarItem):
 
         cpu_idle_section = stats_line.split(", ")[3]
 
-        cpu_idle = float(cpu_idle_section.split(" ")[0].replace(",", "."))
-        cpu_busy = int(100 - cpu_idle)
+        try:
+            cpu_idle = float(cpu_idle_section.split(" ")[0].replace(",", "."))
+            cpu_busy = int(100 - cpu_idle)
+        except Exception:
+            # TODO
+            cpu_busy = 0
 
         return f"{cpu_busy: 2}%"
 

@@ -55,5 +55,8 @@ echo -e "\nChecking exteneral dependencies of notes repo:"
 echo -e "\nChecking common tools:"
 ./manage.py check-common-tools
 
+echo -e "\nChecking multimedia:"
+./manage.py check-multimedia
+
 echo -e "\nChecking VS Code extensions:"
 ./manage.py vscode-extensions status
