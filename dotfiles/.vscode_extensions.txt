@@ -1,10 +1,12 @@
 42Crunch.vscode-openapi
 bpruitt-goddard.mermaid-markdown-syntax-highlighting
 golang.go
+joaompinto.vscode-graphviz
 marp-team.marp-vscode
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode.cpptools
 npxms.hide-gitignored
 redhat.vscode-yaml
+rust-lang.rust
 shd101wyy.markdown-preview-enhanced

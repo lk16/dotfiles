@@ -158,14 +158,14 @@ class MachineStats(StatusBarItem):
             # TODO
             cpu_busy = 0
 
-        return f"{cpu_busy: 2}%"
+        return f"{cpu_busy: 3}%"
 
     def get_text(self) -> str:
         disk = self.get_empty_disk_space()
         memory = self.get_free_memory()
         cpu = self.get_cpu_usage()
 
-        return f"Cpu {cpu} | Mem {memory} | Disk {disk}"
+        return f"Cpu{cpu} | Mem {memory} | Disk {disk}"
 
 
 STATUSBAR_ITEMS: Dict[str, Type[StatusBarItem]] = {
