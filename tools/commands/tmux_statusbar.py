@@ -49,8 +49,9 @@ class Battery(StatusBarItem):
 
         for line in output:
             if marker in line:
-                percentage = round(float(line.split(" ")[-1][:-1]))
-                return f"{percentage}%"
+                percentage_raw = next(item for item in line.split(" ") if "%" in item)
+                percentage = float(percentage_raw.strip("%,"))
+                return f"{percentage:.0f}%"
 
         raise ValueError(f'Marker "{marker}" not found')
 
