@@ -2,19 +2,19 @@
 # Dotfiles
 
 This repo contains:
-* `dotfiles`: actual dotfiles and other config files
-* `howto`: commands and tricks, somewhat unorganized
-* `tools`: a few of python scripts that do
+* `dotfiles`: actual dotfiles and other config files.
+* `howto`: commands and tricks, somewhat unorganized.
+* `tools`: a few handy python scripts, see tools section below.
 
 ## Setup dotfiles and tools
-The next section explains what the installation script does.
-
 * Clone this repo
 * From repo root run `./install.sh`
 
 The install script makes symlinks to the dotfiles in the cloned repo. That way all tracked files stay in the same folder, while applications (such as `bash`) can find the dotfiles where they are expected to be (such as `~/.bashrc`).
 
 The install script also sets up a virtual environment for the tools.
+
+The script is written such that it can be run again if parts of the installation steps are added, without creating any duplicate files or having other ugly side-effects. The script never removes any files.
 
 ## Tools
 These are run with `tools <command>`.
