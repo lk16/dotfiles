@@ -47,3 +47,5 @@ function bright() {
 }
 
 alias dc="docker-compose"
+
+alias find-missing-init="tools find-missing-init $(pwd)"

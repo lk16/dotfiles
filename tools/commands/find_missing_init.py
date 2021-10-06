@@ -1,13 +1,16 @@
+import os
+from functools import lru_cache
 from pathlib import Path
+from subprocess import CalledProcessError
 from typing import List
 
 import click
+from helpers.command import run_command
 
-IGNORED_FOLDERS = ["venv", ".venv"]
 
-
-def contains_python_file(path: Path) -> bool:
-    for file in path.iterdir():
+@lru_cache(maxsize=None)
+def contains_python_file(folder: Path) -> bool:
+    for file in folder.iterdir():
         if file.is_file() and file.suffix == ".py":
             return True
         if file.is_dir() and contains_python_file(file):
@@ -16,37 +19,34 @@ def contains_python_file(path: Path) -> bool:
     return False
 
 
-def has_missing_init_file(path: Path) -> bool:
-    return contains_python_file(path) and not (path / "__init__.py").exists()
-
-
-def find_mising_init_files(path: Path) -> List[Path]:
-    # TODO this naive algorithm is very inefficient
-    missing_init_files: List[Path] = []
-
-    if has_missing_init_file(path):
-        missing_init_files.append(path / "__init__.py")
-
-    for file in path.iterdir():
-        if file.is_dir() and file.name not in IGNORED_FOLDERS:
-            missing_init_files += find_mising_init_files(file)
-
-    return missing_init_files
-
-
 @click.command()
 @click.argument("root_folder", type=str)
 @click.option("--create", "-c", is_flag=True)
 def find_missing_init(root_folder: str, create: bool):
 
+    os.chdir(root_folder)
+
+    try:
+        run_command("git rev-parse --show-toplevel 2>/dev/null")
+    except CalledProcessError:
+        print(f"This is not a git repository: {root_folder}")
+        exit(1)
+
+    # get absolute path of all non-root folders with git-tracked files
+    folders_raw = run_command(
+        r"git ls-files | xargs -n 1 dirname | sort | uniq | grep -v '^\.$' | xargs realpath"
+    )
+    folders = [Path(folder) for folder in folders_raw]
+
     missing_init_files: List[Path] = []
 
-    for file in Path(root_folder).iterdir():
-        if file.is_dir() and file.name not in IGNORED_FOLDERS:
-            missing_init_files += find_mising_init_files(file)
+    for folder in folders:
+        init_path = folder / "__init__.py"
+        if not init_path.exists() and contains_python_file(folder):
+            missing_init_files.append(init_path)
 
     if create:
-        for file in sorted(missing_init_files):
+        for file in missing_init_files:
             file.touch(mode=0o644)
         print(f"Created {len(missing_init_files)} missing __init__.py files.")
         return
