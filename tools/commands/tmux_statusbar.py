@@ -124,6 +124,8 @@ class MachineStats(StatusBarItem):
         return stdout.decode("utf-8").strip().split("\n")[1].strip()
 
     def get_free_memory(self) -> str:
+        # TODO this is not always displaying the right number
+
         free_memory_line = ""
 
         with open("/proc/meminfo", "r") as meminfo:

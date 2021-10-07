@@ -23,6 +23,7 @@ def contains_python_file(folder: Path) -> bool:
 @click.argument("root_folder", type=str)
 @click.option("--create", "-c", is_flag=True)
 def find_missing_init(root_folder: str, create: bool):
+    # TODO use https://github.com/lk16/detect-missing-init to not replicate code between repositories
 
     os.chdir(root_folder)
 

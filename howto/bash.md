@@ -35,3 +35,19 @@ type myfunction
 type cd # builtin
 type nonexistent
 ```
+
+---
+
+### Open all files matching some regex in VS Code
+
+```sh
+code -r $(git grep -l 'property\.name')
+```
+
+---
+
+### Open all files with mypy errors in VS Code
+
+```sh
+code -r $(pre-commit run mypy -a 2>&1 | cut -d ':' -f 1 | grep '\.py' | uniq)
+```
