@@ -49,5 +49,5 @@ code -r $(git grep -l 'property\.name')
 ### Open all files with mypy errors in VS Code
 
 ```sh
-code -r $(pre-commit run mypy -a 2>&1 | cut -d ':' -f 1 | grep '\.py' | uniq)
+code --goto $(pre-commit run mypy -a 2>&1 | cut -d ':' -f 1-2 | grep '\.py')
 ```
