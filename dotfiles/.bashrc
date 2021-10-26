@@ -99,6 +99,7 @@ trap '[[ -t 1 ]] && tput sgr0' DEBUG
 [ -f $DOTFILES_ROOT/dotfiles/.bash_aliases.sh ] && source $DOTFILES_ROOT/dotfiles/.bash_aliases.sh
 [ -f $DOTFILES_ROOT/dotfiles/.bash_functions.sh ] && source $DOTFILES_ROOT/dotfiles/.bash_functions.sh
 [ -f ~/.server_aliases.sh ] && source ~/.server_aliases.sh
+[ -f $DOTFILES_ROOT/dotfiles/.gitlab.sh ] && source $DOTFILES_ROOT/dotfiles/.gitlab.sh
 
 # make sure ssh key forwarding works
 [ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa 2>&1 | grep -v 'Identity added:'
