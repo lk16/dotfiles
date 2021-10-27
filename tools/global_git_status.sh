@@ -8,6 +8,7 @@
 GIT_REPOS=$(find ~ -maxdepth 3 -name .git -type d -prune -exec dirname {} \;)
 
 dirty_repos=0
+repos=0
 
 for repo in $GIT_REPOS; do
     if [[ ! -z $(git -C $repo status -s) ]]; then
@@ -17,8 +18,10 @@ for repo in $GIT_REPOS; do
         echo
         dirty_repos=$(expr $dirty_repos + 1)
     fi
+    repos=$(expr $repos + 1)
 done
 
+echo -e "\033[1;32mChecked $repos repositories.\033[0m"
 if [[ $dirty_repos -ne 0 ]]; then
     echo -e "\033[1;31mFound $dirty_repos dirty repositories.\033[0m"
     exit 1

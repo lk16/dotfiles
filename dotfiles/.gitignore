@@ -1,2 +1,5 @@
 .envrc
 *.code-workspace
+.env
+.env.local
+.env.prod
