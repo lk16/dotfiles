@@ -1,0 +1,5 @@
+[user]
+	email = luuk_verweij@msn.com
+	name = Luuk Verweij
+[core]
+    excludesfile = ~/.gitignore

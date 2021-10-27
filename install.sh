@@ -17,6 +17,8 @@ fi
 dotfiles=(
     ".bashrc"
     ".direnvrc"
+    ".gitconfig"
+    ".gitignore"
     ".tmux.conf"
 )
 
