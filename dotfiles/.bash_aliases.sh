@@ -34,6 +34,8 @@ alias gv="git rev-parse HEAD | cut -c -8"
 alias ggpf="git push --force-with-lease"
 alias gp='git push -u origin $(git branch --show-current)'
 
+alias gggs='~/projects/dotfiles/tools/global_git_status.sh'
+
 alias json="python3 -m json.tool"
 
 alias dps="docker-compose ps"
