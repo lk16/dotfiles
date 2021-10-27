@@ -1,5 +1,4 @@
 {
-    "breadcrumbs.enabled": false,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.wordBasedSuggestionsMode": "matchingDocuments",
@@ -25,5 +24,7 @@
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Monokai",
-    "workbench.editor.untitled.hint": "hidden"
+    "workbench.editor.untitled.hint": "hidden",
+    "breadcrumbs.enabled": false,
+    "diffEditor.renderSideBySide": false
 }
