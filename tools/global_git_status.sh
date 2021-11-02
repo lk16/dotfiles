@@ -22,14 +22,8 @@ for repo in $GIT_REPOS; do
 done
 
 if [[ $dirty_repos -eq 0 ]]; then
-    echo -en "\033[1;32m"
+    echo -e "\033[1;32mChecked $repos repositories."
 else
-    echo -en "\033[1;31m"
-fi
-
-echo -e "Checked $repos repositories."
-echo -e "Found $dirty_repos dirty repositories.\033[0m"
-
-if [[ $dirty_repos -ne 0 ]]; then
+    echo -e "\033[1;31mChecked $repos repositories. Found $dirty_repos dirty repositories.\033[0m"
     exit 1
 fi
