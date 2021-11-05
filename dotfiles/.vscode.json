@@ -19,11 +19,11 @@
     "markdown-preview-enhanced.mermaidTheme": "dark",
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    "telemetry.telemetryLevel": "off",
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Monokai",
     "workbench.editor.untitled.hint": "hidden",
-    "diffEditor.renderSideBySide": false
+    "diffEditor.renderSideBySide": false,
+    "breadcrumbs.enabled": false
 }
