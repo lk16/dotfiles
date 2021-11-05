@@ -130,5 +130,8 @@ if which direnv > /dev/null; then
     eval "$(direnv hook bash)"
 fi
 
-# use colors with pytest
+# force colored output of pytest
 export PYTEST_ADDOPTS="--color=yes"
+
+# force colored output of mypy
+export MYPY_FORCE_COLOR=1
