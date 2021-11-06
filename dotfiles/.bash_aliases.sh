@@ -51,3 +51,21 @@ function bright() {
 alias dc="docker-compose"
 
 alias find-missing-init="tools find-missing-init $(pwd)"
+
+function playok() {
+    (
+        cd /home/luuk/projects/othello_tree
+        . venv/bin/activate
+        # this relies on direnv for env vars
+        ./manage.py download-playok-games
+    )
+}
+
+function othelloquest() {
+    (
+        cd /home/luuk/projects/othello_tree
+        . venv/bin/activate
+        # this relies on direnv for env vars
+        ./manage.py download-othello-quest-games
+    )
+}
