@@ -16,3 +16,21 @@ function csvcut(){ tools csvcut $@; }
 function highlight(){ tools highlight $@; }
 function mrs(){ tools mrs $@; }
 function mr(){ tools mr $@; }
+
+function playok() {
+    (
+        cd /home/luuk/projects/othello_tree
+        . venv/bin/activate
+        . .env
+        ./manage.py download-playok-games
+    )
+}
+
+function othelloquest() {
+    (
+        cd /home/luuk/projects/othello_tree
+        . venv/bin/activate
+        . .env
+        ./manage.py download-othello-quest-games
+    )
+}
