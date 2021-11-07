@@ -3,7 +3,7 @@
 # TODO make this a python script
 # TODO use -maxdepth 4 to cover ~/projects/INACTIEF
 
-GIT_REPOS=$(find ~ -maxdepth 3 -name .git -type d -prune -exec dirname {} \;)
+GIT_REPOS=$(find ~ -maxdepth 4 -name .git -type d -prune -exec dirname {} \; | grep -v '/\.' | sort)
 
 dirty_repos=0
 repos=0

@@ -48,5 +48,5 @@ __prompt_command() {
         PS1+="${COLOR_LIGHT_GREEN}\$${USER_COMMAND_COLOR}"
     fi
 
-    PS1+=" \\[${USER_COMMAND_COLOR}\\]"
+    PS1+=" \\[${USER_COMMAND_COLOR}\\]${COLOR_NO_COLOR}"
 }
