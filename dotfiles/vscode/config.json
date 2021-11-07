@@ -25,5 +25,6 @@
     "workbench.colorTheme": "Monokai",
     "workbench.editor.untitled.hint": "hidden",
     "diffEditor.renderSideBySide": false,
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "workbench.startupEditor": "none"
 }
