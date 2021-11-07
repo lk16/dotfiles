@@ -19,7 +19,7 @@ bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 
 # tweak status bar
-set -g status-right '#($DOTFILES_ROOT/dotfiles/.tmux_statusbar.sh)'
+set -g status-right '#($DOTFILES_ROOT/dotfiles/tmux/statusbar.sh)'
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'

@@ -14,7 +14,6 @@ esac
 
 # load these if they exist
 for script in $(find $DOTFILES_ROOT/dotfiles/bash -name '*.sh' | grep -v '/\(rc\|profile\)\.sh$'); do
-    echo "loading $script"
     . $script
 done
 

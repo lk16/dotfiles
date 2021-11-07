@@ -6,7 +6,7 @@ from click.exceptions import ClickException
 from helpers.color import colorize_text
 from helpers.path import DOTFILES_ROOT
 
-VSCODE_EXTENSIONS_PATH = DOTFILES_ROOT / "dotfiles/.vscode_extensions.txt"
+VSCODE_EXTENSIONS_PATH = DOTFILES_ROOT / "dotfiles/vscode/extensions.txt"
 
 
 @click.group()

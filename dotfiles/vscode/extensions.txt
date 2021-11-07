@@ -3,6 +3,7 @@ bpruitt-goddard.mermaid-markdown-syntax-highlighting
 bungcip.better-toml
 golang.go
 joaompinto.vscode-graphviz
+malmaud.tmux
 marp-team.marp-vscode
 ms-python.python
 ms-python.vscode-pylance
