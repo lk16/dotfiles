@@ -34,5 +34,19 @@ parse_git_branch() {
     fi
 }
 
-PS1="\\[${USER_PROMPT_COLOR}\\]\u \W \\[${COLOR_LIGHT_GREEN}\\]\$(parse_git_branch)\\[${USER_PROMPT_COLOR}\\]\$ \\[${USER_COMMAND_COLOR}\\]"
-trap '[[ -t 1 ]] && tput sgr0' DEBUG
+PROMPT_COMMAND=__prompt_command
+
+# With help from https://stackoverflow.com/a/16715681
+__prompt_command() {
+    local EXIT="$?"
+
+    PS1="\\[${USER_PROMPT_COLOR}\\]\W \\[${COLOR_LIGHT_GREEN}\\]\$(parse_git_branch)\\[${USER_PROMPT_COLOR}\\]"
+
+    if [ $EXIT != 0 ]; then
+        PS1+="${COLOR_LIGHT_RED}\$${USER_COMMAND_COLOR}"        # Add red if exit code non 0
+    else
+        PS1+="${COLOR_LIGHT_GREEN}\$${USER_COMMAND_COLOR}"
+    fi
+
+    PS1+=" \\[${USER_COMMAND_COLOR}\\]"
+}
