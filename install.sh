@@ -14,20 +14,13 @@ if ! which "python3" > /dev/null; then
     exit 1
 fi
 
-dotfiles=(
-    ".bashrc"
-    ".direnvrc"
-    ".gitconfig"
-    ".gitignore"
-    ".tmux.conf"
-)
-
 # make symlinks for dotfiles
-for dotfile in "${dotfiles[@]}"; do
-	ln -s $DOTFILES_ROOT/dotfiles/$dotfile ~/$dotfile
-done
-
-# make symlink for VS Code config separately because target file differs from symlink name
+ln -s $DOTFILES_ROOT/dotfiles/bash/rc.sh ~/.bashrc
+ln -s $DOTFILES_ROOT/dotfiles/bash/profile.sh ~/.profile
+ln -s $DOTFILES_ROOT/dotfiles/.direnvrc ~/.direnvrc
+ln -s $DOTFILES_ROOT/dotfiles/.gitconfig ~/.gitconfig
+ln -s $DOTFILES_ROOT/dotfiles/.gitignore ~/.gitignore
+ln -s $DOTFILES_ROOT/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s $DOTFILES_ROOT/dotfiles/.vscode.json ~/.config/Code/User/settings.json
 
 # copy default tmux toolbar conf
