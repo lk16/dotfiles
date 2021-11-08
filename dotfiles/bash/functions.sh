@@ -5,6 +5,7 @@ function bright() {
 }
 
 function tools(){
+    # TODO make this work without changing directory
     (
         cd $DOTFILES_ROOT/tools
         . venv/bin/activate
@@ -12,10 +13,21 @@ function tools(){
     )
 }
 
-function csvcut(){ tools csvcut $@; }
-function highlight(){ tools highlight $@; }
-function mrs(){ tools mrs $@; }
-function mr(){ tools mr $@; }
+function csvcut(){
+    tools csvcut $@
+}
+
+function highlight(){
+    tools highlight $@
+}
+
+function mr(){
+    (
+        . $DOTFILES_ROOT/tools/venv/bin/activate
+        $DOTFILES_ROOT/tools/manage.py create-merge-request "$@"
+    )
+ }
+
 
 function playok() {
     (
