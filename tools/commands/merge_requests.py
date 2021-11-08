@@ -37,7 +37,7 @@ def create_merge_request(wip: bool) -> None:
         title_parts = split_branch[3:]
 
     title = title_parts[0].title() + " "
-    title += " ".join(title_part.lower() for title_part in title_parts)
+    title += " ".join(title_part.lower() for title_part in title_parts[1:])
 
     prefix = ""
 
