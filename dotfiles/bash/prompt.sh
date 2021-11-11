@@ -37,16 +37,21 @@ parse_git_branch() {
 PROMPT_COMMAND=__prompt_command
 
 # With help from https://stackoverflow.com/a/16715681
+
+# Fixes from https://superuser.com/a/695350
+# Make your \[ and \] strictly matching non-nesting pairs.
+# Make sure that all non-printing sequences are within \[ and \] (and that, conversely, that all printing sequences are not).
+
 __prompt_command() {
     local EXIT="$?"
 
-    PS1="\\[${USER_PROMPT_COLOR}\\]\W \\[${COLOR_LIGHT_GREEN}\\]\$(parse_git_branch)\\[${USER_PROMPT_COLOR}\\]"
+    PS1="\[${USER_PROMPT_COLOR}\]\W \[${COLOR_LIGHT_GREEN}\]\$(parse_git_branch)\[${USER_PROMPT_COLOR}\]"
 
     if [ $EXIT != 0 ]; then
-        PS1+="${COLOR_LIGHT_RED}\$${USER_COMMAND_COLOR}"        # Add red if exit code non 0
+        PS1+="\[${COLOR_LIGHT_RED}\]\$\[${USER_COMMAND_COLOR}\]"        # Add red if exit code non 0
     else
-        PS1+="${COLOR_LIGHT_GREEN}\$${USER_COMMAND_COLOR}"
+        PS1+="\[${COLOR_LIGHT_GREEN}\]\$\[${USER_COMMAND_COLOR}\]"
     fi
 
-    PS1+=" \\[${USER_COMMAND_COLOR}\\]${COLOR_NO_COLOR}"
+    PS1+=" \[${USER_COMMAND_COLOR}\]\[${COLOR_NO_COLOR}\]"
 }
