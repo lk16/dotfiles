@@ -31,18 +31,16 @@ function mr(){
 
 function playok() {
     (
-        cd /home/luuk/projects/othello_tree
-        . venv/bin/activate
+        cd ~/projects/othello_tree
         . .env
-        ./manage.py download-playok-games
+        poetry run ./manage.py download-playok-games
     )
 }
 
 function othelloquest() {
     (
-        cd /home/luuk/projects/othello_tree
-        . venv/bin/activate
+        cd ~/projects/othello_tree
         . .env
-        ./manage.py download-othello-quest-games
+        poetry run ./manage.py download-othello-quest-games
     )
 }
