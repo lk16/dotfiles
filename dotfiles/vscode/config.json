@@ -26,5 +26,6 @@
     "workbench.editor.untitled.hint": "hidden",
     "diffEditor.renderSideBySide": false,
     "breadcrumbs.enabled": false,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "go.toolsManagement.autoUpdate": true
 }
