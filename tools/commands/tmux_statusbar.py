@@ -8,6 +8,7 @@ import traceback
 from typing import Any, Dict, List, Type
 
 import click
+import psutil
 import requests
 from helpers.cache import load_cache, store_cache
 from helpers.path import DOTFILES_ROOT
@@ -124,19 +125,7 @@ class MachineStats(StatusBarItem):
         return stdout.decode("utf-8").strip().split("\n")[1].strip()
 
     def get_free_memory(self) -> str:
-        # TODO this is not always displaying the right number
-
-        free_memory_line = ""
-
-        with open("/proc/meminfo", "r") as meminfo:
-            for line in meminfo:
-                if "MemFree:" in line:
-                    free_memory_line = line
-
-        free_memory_kb = next(
-            int(word) for word in free_memory_line.split(" ") if word.isdigit()
-        )
-
+        free_memory_kb = psutil.virtual_memory().free / 1024
         free_memory_mb = free_memory_kb / 1024
         free_memory_gb = free_memory_mb / 1024
 
@@ -146,22 +135,9 @@ class MachineStats(StatusBarItem):
         return f"{int(free_memory_mb)}M"
 
     def get_cpu_usage(self) -> str:
-        process = subprocess.Popen(
-            ["top", "-bn", "1"], stderr=subprocess.DEVNULL, stdout=subprocess.PIPE
-        )
-        stdout, _ = process.communicate()
-        stats_line = stdout.decode("utf-8").strip().split("\n")[2]
+        cpu_usage = int(psutil.cpu_percent())
 
-        cpu_idle_section = stats_line.split(", ")[3]
-
-        try:
-            cpu_idle = float(cpu_idle_section.split(" ")[0].replace(",", "."))
-            cpu_busy = int(100 - cpu_idle)
-        except Exception:
-            # TODO
-            cpu_busy = 0
-
-        return f"{cpu_busy: 3}%"
+        return f"{cpu_usage: 3}%"
 
     def get_text(self) -> str:
         disk = self.get_empty_disk_space()
