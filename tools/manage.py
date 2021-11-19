@@ -9,6 +9,7 @@ from commands.check_dependencies import (
 from commands.csvcut import csvcut
 from commands.daily_notes import new_daily_notes
 from commands.find_missing_init import find_missing_init
+from commands.global_git import global_git_status
 from commands.highlight import highlight
 from commands.merge_requests import create_merge_request
 from commands.tmux_broadcast import tmux_broadcast
@@ -32,6 +33,7 @@ cli.add_command(new_daily_notes)
 cli.add_command(tmux_broadcast)
 cli.add_command(vscode_extensions)
 cli.add_command(create_merge_request)
+cli.add_command(global_git_status)
 
 if __name__ == "__main__":
     cli()
