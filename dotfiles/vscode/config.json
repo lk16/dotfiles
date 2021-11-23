@@ -4,6 +4,19 @@
     "editor.wordBasedSuggestionsMode": "matchingDocuments",
     "editor.bracketPairColorization.enabled": true,
     "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
+        "**/.vscode": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+
+    },
     "files.associations": {
         "*.env": "shellscript",
         "*.env.*": "shellscript"
