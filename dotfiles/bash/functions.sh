@@ -44,3 +44,19 @@ function othelloquest() {
         poetry run ./manage.py download-othello-quest-games
     )
 }
+
+function gp() {
+    local branch=$(git branch --show-current)
+
+    if git branch -a | grep "origin/$branch" >/dev/null; then
+        git push
+    else
+        git push -u origin $branch
+    fi
+}
+
+function bright() {
+    for output in $(xrandr | grep ' connected ' | cut -d ' ' -f 1); do
+        xrandr --output "$output" --brightness $1 2>/dev/null
+    done
+}

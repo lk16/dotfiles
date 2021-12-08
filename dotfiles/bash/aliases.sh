@@ -32,7 +32,6 @@ alias ggrc="git rebase --continue"
 alias gitroot='git rev-parse --show-toplevel 2>/dev/null'
 alias gv="git rev-parse HEAD | cut -c -8"
 alias ggpf="git push --force-with-lease"
-alias gp='git push -u origin $(git branch --show-current)'
 
 alias gggs='tools global-git-status'
 
@@ -41,12 +40,6 @@ alias json="python3 -m json.tool"
 alias dps="docker-compose ps"
 
 alias alert="mplayer $DOTFILES_ROOT/tools/airhorn.mp3 -loop 0 > /dev/null 2>&1"
-
-function bright() {
-    for output in $(xrandr | grep ' connected ' | cut -d ' ' -f 1); do
-        xrandr --output "$output" --brightness $1 2>/dev/null
-    done
-}
 
 alias dc="docker-compose"
 
