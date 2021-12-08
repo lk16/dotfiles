@@ -51,7 +51,7 @@ def create_merge_request(wip: bool, web: bool) -> None:
     if wip:
         prefix = "[WIP]"
 
-    command = f"glab mr create -t '{prefix}[{ticket}] {title}' --fill --yes"
+    command = f"glab mr create -t '{prefix}[{ticket}] {title}' --fill --yes --remove-source-branch"
     run_command(command)
 
     if web:
