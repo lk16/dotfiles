@@ -42,5 +42,6 @@
     "breadcrumbs.enabled": false,
     "workbench.startupEditor": "none",
     "go.toolsManagement.autoUpdate": true,
-    "liveshare.launcherClient": "visualStudioCode"
+    "liveshare.launcherClient": "visualStudioCode",
+    "window.zoomLevel": 1
 }
