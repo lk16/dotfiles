@@ -39,9 +39,8 @@
     "workbench.colorTheme": "Monokai",
     "workbench.editor.untitled.hint": "hidden",
     "diffEditor.renderSideBySide": false,
-    "breadcrumbs.enabled": false,
     "workbench.startupEditor": "none",
     "go.toolsManagement.autoUpdate": true,
     "liveshare.launcherClient": "visualStudioCode",
-    "window.zoomLevel": 1
+    "breadcrumbs.enabled": false
 }
