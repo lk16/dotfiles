@@ -11,4 +11,8 @@ layout_poetry() {
     export VIRTUAL_ENV=$(echo "$VENV" | rev | cut -d'/' -f2- | rev)
     export POETRY_ACTIVE=1
     PATH_add "$VENV"
+
+    if ! pip list 2>&1 | grep pdbpp > /dev/null; then
+        echo -e "\033[1;31mCould not find pdbpp!\033[0m"
+    fi
 }
