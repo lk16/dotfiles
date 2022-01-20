@@ -16,6 +16,9 @@ The install script also sets up a virtual environment for the tools.
 
 The script is written such that it can be run again if parts of the installation steps are added, without creating any duplicate files or having other ugly side-effects. The script never removes any files.
 
+## Setup white noise hotkey
+Configure this command with your prefered hotkey: `bash -ci 'noise'`
+
 ## Tools
 These are run with `tools <command>`.
 * `check-common-tools`: check if my commonly used tools are installed
