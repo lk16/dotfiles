@@ -60,3 +60,8 @@ function bright() {
         xrandr --output "$output" --brightness $1 2>/dev/null
     done
 }
+
+function noise() {
+    pkill -f 'mplayer.*noise.ogg' || \
+    (mplayer $DOTFILES_ROOT/tools/noise.ogg -loop 0 > /dev/null 2>&1 &)
+}
