@@ -1,5 +1,6 @@
 {
     "editor.minimap.enabled": false,
+    "editor.fontSize": 13,
     "editor.renderWhitespace": "none",
     "editor.wordBasedSuggestionsMode": "matchingDocuments",
     "editor.bracketPairColorization.enabled": true,
