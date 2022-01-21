@@ -1,6 +1,7 @@
 {
     "editor.minimap.enabled": false,
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.renderWhitespace": "none",
     "editor.wordBasedSuggestionsMode": "matchingDocuments",
     "editor.bracketPairColorization.enabled": true,
