@@ -7,10 +7,10 @@ from commands.check_dependencies import (
     check_multimedia,
 )
 from commands.csvcut import csvcut
-from commands.daily_notes import new_daily_notes
 from commands.find_missing_init import find_missing_init
 from commands.global_git import global_git_status
 from commands.highlight import highlight
+from commands.meeting_notes import archive_meeting_files
 from commands.merge_requests import create_merge_request
 from commands.tmux_broadcast import tmux_broadcast
 from commands.tmux_statusbar import tmux_statusbar
@@ -29,7 +29,7 @@ cli.add_command(csvcut)
 cli.add_command(find_missing_init)
 cli.add_command(tmux_statusbar)
 cli.add_command(highlight)
-cli.add_command(new_daily_notes)
+cli.add_command(archive_meeting_files)
 cli.add_command(tmux_broadcast)
 cli.add_command(vscode_extensions)
 cli.add_command(create_merge_request)
