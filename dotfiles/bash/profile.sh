@@ -21,16 +21,15 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+# add PATH values when they exist
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/.pulumi/bin" ] && PATH="$HOME/.pulumi/bin:$PATH"
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
+# setup pyenv
 eval "$(pyenv init --path)"
+
 export QT_STYLE_OVERRIDE=kvantum
-. "$HOME/.cargo/env"
+
+# setup cargo if installed
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
