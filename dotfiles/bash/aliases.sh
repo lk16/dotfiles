@@ -32,6 +32,7 @@ alias ggrc="git rebase --continue"
 alias gitroot='git rev-parse --show-toplevel 2>/dev/null'
 alias gv="git rev-parse HEAD | cut -c -8"
 alias ggpf="git push --force-with-lease"
+alias gb="git branch --show-current"
 
 alias gggs='tools global-git-status'
 
@@ -42,5 +43,3 @@ alias dps="docker-compose ps"
 alias alert="mplayer $DOTFILES_ROOT/tools/airhorn.mp3 -loop 0 > /dev/null 2>&1"
 
 alias dc="docker-compose"
-
-alias find-missing-init="tools find-missing-init $(pwd)"
