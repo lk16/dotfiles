@@ -1,4 +1,6 @@
 {
+    "breadcrumbs.enabled": false,
+    "diffEditor.renderSideBySide": false,
     "editor.minimap.enabled": false,
     "editor.fontSize": 14,
     "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -31,19 +33,19 @@
         "**/.venv/**": true,
         "**/venv/**": true
     },
+    "go.toolsManagement.autoUpdate": true,
+    "liveshare.launcherClient": "visualStudioCode",
     "markdown-preview-enhanced.previewTheme": "monokai.css",
     "markdown-preview-enhanced.mermaidTheme": "dark",
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
+    "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Monokai",
     "workbench.editor.untitled.hint": "hidden",
-    "diffEditor.renderSideBySide": false,
-    "workbench.startupEditor": "none",
-    "go.toolsManagement.autoUpdate": true,
-    "liveshare.launcherClient": "visualStudioCode",
-    "breadcrumbs.enabled": false,
-    "window.zoomLevel": 1
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.startupEditor": "none"
 }
