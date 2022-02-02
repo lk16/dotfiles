@@ -41,7 +41,6 @@
     "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
-    "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Monokai",
     "workbench.editor.untitled.hint": "hidden",
