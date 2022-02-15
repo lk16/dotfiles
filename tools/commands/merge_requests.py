@@ -33,15 +33,11 @@ def create_merge_request(wip: bool, web: bool) -> None:
         print("Expected branch to contain at least 2 dashes")
         exit(1)
 
-    if split_branch[1] == "noticket":
-        ticket = "noticket"
-        title_parts = split_branch[2:]
-    elif split_branch[2] == "noticket":
-        ticket = "noticket"
-        title_parts = split_branch[3:]
-    else:
-        ticket = "-".join(split_branch[1:3])
-        title_parts = split_branch[3:]
+    ticket = split_branch[1]
+    title_parts = split_branch[2:]
+
+    if not any([ticket == "noticket", ticket.isnumeric()]):
+        print('Expected branch to have ticket number or "noticket" as second part')
 
     title = title_parts[0].title() + " "
     title += " ".join(title_part.lower() for title_part in title_parts[1:])
@@ -51,8 +47,14 @@ def create_merge_request(wip: bool, web: bool) -> None:
     if wip:
         prefix = "[WIP]"
 
-    command = f"glab mr create -t '{prefix}[{ticket}] {title}' --fill --yes --remove-source-branch"
-    run_command(command)
+    command = f"glab mr create -t '{prefix}[#{ticket}] {title}' --fill --yes --remove-source-branch"
+
+    try:
+        run_command(command)
+    except CalledProcessError as e:
+        if "could not find any commits between" in str(e.stderr):
+            print("Creating MR failed: no commits between source and target branch.")
+            exit(1)
 
     if web:
         run_command("glab mr view --web")

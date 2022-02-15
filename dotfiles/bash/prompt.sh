@@ -28,8 +28,14 @@ USER_COMMAND_COLOR=$COLOR_LIGHT_PURPLE
 
 # Add git branch if its present to PS1
 parse_git_branch() {
-    branch=$(git rev-parse --git-dir >/dev/null 2>&1 && git rev-parse --abbrev-ref HEAD 2>/dev/null | cut -d '-' -f -3 | tr -d '\n')
+    branch=$(git branch --show-current 2>&1)
+
     if [ $? -eq 0 ]; then
+
+        if [ ${#branch} -gt 15 ]; then
+            branch=$(echo $branch | cut -c -14)…
+        fi
+
         echo -n "($branch) "
     fi
 }
