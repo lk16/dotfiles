@@ -7,7 +7,7 @@ layout_poetry() {
         exit 2
     fi
 
-    local VENV=$(dirname $(poetry run which python))
+    local VENV=$(dirname $(poetry run which python) 2>/dev/null)
     export VIRTUAL_ENV=$(echo "$VENV" | rev | cut -d'/' -f2- | rev)
     export POETRY_ACTIVE=1
     PATH_add "$VENV"
