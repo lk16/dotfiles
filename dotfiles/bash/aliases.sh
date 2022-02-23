@@ -36,6 +36,9 @@ alias gb="git branch --show-current"
 
 alias gggs='tools global-git-status'
 
+# allows using "git conflicts" to list conflicting files
+git config --global alias.conflicts "diff --name-only --diff-filter=U"
+
 alias json="python3 -m json.tool"
 
 alias dps="docker-compose ps"

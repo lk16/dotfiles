@@ -44,3 +44,30 @@ poetry add sqlalchemy@latest
 
 ### Usage with direnv
 [See here](direnv.md)
+
+
+---
+
+### Poetry with pyenv
+
+Installation of custom python version.
+We use python 3.10.2 as an example here.
+
+```sh
+# Make pyenv download and install 3.10.2
+pyenv install 3.10.2
+
+# Tell pyenv to use 3.10 in this folder
+pyenv local 3.10.2
+
+# Tell poetry to use python 3.10
+poetry env use 3.10
+
+# Confirm that the poetry environment has the right version
+poetry run python -V
+
+# Continue like usual:
+poetry install
+
+# Start working on the project
+```
