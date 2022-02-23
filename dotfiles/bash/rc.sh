@@ -22,6 +22,7 @@ done
 # add to PATH if they exist
 [ -d ~/.local/bin ] && PATH=$PATH:~/.local/bin
 [ -d /opt/bin ] && PATH=$PATH:/opt/bin
+[ -d /usr/local/bin ] && PATH=$PATH:/usr/local/bin
 
 # remove duplicates from PATH
 PATH=$(python -c 'import os; from collections import OrderedDict; \

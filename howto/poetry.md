@@ -61,6 +61,7 @@ pyenv install 3.10.2
 pyenv local 3.10.2
 
 # Tell poetry to use python 3.10
+# If this step fails, be sure that ~/.pyenv/shims is in PATH
 poetry env use 3.10
 
 # Confirm that the poetry environment has the right version
