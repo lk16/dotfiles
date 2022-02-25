@@ -23,7 +23,8 @@
     },
     "files.associations": {
         "*.env": "shellscript",
-        "*.env.*": "shellscript"
+        "*.env.*": "shellscript",
+        "*.*ignore": "ignore"
     },
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,

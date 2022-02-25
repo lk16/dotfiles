@@ -9,6 +9,7 @@ EXTERNAL_DEPENDENCIES = [
     "direnv",
     "mplayer",
     "glab",
+    "ntpd",
     "pygmentize",
     "xclip",
     "xrandr",
