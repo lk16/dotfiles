@@ -25,6 +25,7 @@ sudo apt-get install tmux
 
 ##### Session
 * Leave tmux while keeping session open (detach): `crtl + b` `d`
+* Rename session: `ctrl + b` `$`
 
 ##### Window
 * Create new window: `crtl + b` `c`
