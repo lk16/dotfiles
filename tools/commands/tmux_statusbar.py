@@ -125,7 +125,11 @@ class MachineStats(StatusBarItem):
         return stdout.decode("utf-8").strip().split("\n")[1].strip()
 
     def get_free_memory(self) -> str:
-        free_memory_kb = psutil.virtual_memory().free / 1024
+        virtual_mem = psutil.virtual_memory()
+
+        # does not show memory used for cache
+        free_memory_b = virtual_mem.total - virtual_mem.used
+        free_memory_kb = free_memory_b / 1024
         free_memory_mb = free_memory_kb / 1024
         free_memory_gb = free_memory_mb / 1024
 
