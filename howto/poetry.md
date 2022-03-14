@@ -45,7 +45,6 @@ poetry add sqlalchemy@latest
 ### Usage with direnv
 [See here](direnv.md)
 
-
 ---
 
 ### Poetry with pyenv
@@ -72,3 +71,21 @@ poetry install
 
 # Start working on the project
 ```
+
+---
+
+### Poetry versioning and git tags
+
+When adding a new feature or bugfix in a repo used (refered from now no as "the library") by other repos:
+
+Before merging the fix/feature:
+- Implement the fix/feature to your library
+- Update the `version` in the section `[tool.poetry]` in `pyproject.toml` in the root of the library repo
+- Be sure this is all included in your branch
+- Make an PR/MR and get your branch merged
+
+After merging:
+- Run `git checkout master` and `git pull`
+- Tag the merge commit with the new version: for example `git tag v0.2.3`.
+- Confirm that the tag is on the correct commit (run `gg` or similar).
+- Push the newly created tag: `git push --tags`.
