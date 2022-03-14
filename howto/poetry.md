@@ -89,3 +89,8 @@ After merging:
 - Tag the merge commit with the new version: for example `git tag v0.2.3`.
 - Confirm that the tag is on the correct commit (run `gg` or similar).
 - Push the newly created tag: `git push --tags`.
+
+How to use this new version of the library on another project:
+- Update the `[tool.poetry.dependencies]` or `[tool.poetry.dev-dependencies]` in `pyproject.toml` to mention the git tag we just created.
+For example: `mylibrary = {git = "https://oauth2:***@githab.com/username/mylibrary.git", tag = "v0.2.3"}`
+- Run `poetry update mylibrary` (Replace `mylibrary` with the actual library name.)
