@@ -45,7 +45,7 @@ def create_merge_request(wip: bool, web: bool) -> None:
     prefix = ""
 
     if wip:
-        prefix = "[WIP]"
+        prefix = "Draft: "
 
     maybe_hash_char = ""
 
