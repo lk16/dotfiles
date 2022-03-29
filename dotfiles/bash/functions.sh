@@ -65,3 +65,7 @@ function noise() {
     pkill -f 'mplayer.*noise.ogg' || \
     (mplayer $DOTFILES_ROOT/tools/noise.ogg -loop 0 > /dev/null 2>&1 &)
 }
+
+function newticket() {
+    glab issue create -t "$1" -l 'TODO' -d '' -a luuk.verweij
+}
