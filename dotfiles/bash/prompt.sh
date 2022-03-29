@@ -49,7 +49,18 @@ PROMPT_COMMAND=__prompt_command
 # Make sure that all non-printing sequences are within \[ and \] (and that, conversely, that all printing sequences are not).
 
 __prompt_command() {
+    # has to be first
     local EXIT="$?"
+
+    # Add unwritten history item to ~/.bash_history
+    # Since this runs after every command completes, it should add every command to the history.
+    history -a
+
+    # clear history
+    history -c
+
+    # reload history from ~/.bash_history
+    history -r
 
     PS1="\[${USER_PROMPT_COLOR}\]\W \[${COLOR_LIGHT_GREEN}\]\$(parse_git_branch)\[${USER_PROMPT_COLOR}\]"
 
