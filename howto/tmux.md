@@ -42,6 +42,7 @@ sudo apt-get install tmux
 * Split pane vertically `ctrl + b` `"`
 * Split pane horizontally `ctrl + b` `%`
 * Switch panes `ctrl + b` `arrow key`
+* Resize current pane `ctrl + b` `ctrl + arrow key`
 * Cycle through pane layouts `ctrl + b` `space`
 
 * Rename session: ...
