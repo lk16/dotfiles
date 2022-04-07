@@ -54,7 +54,11 @@ We use python 3.10.2 as an example here.
 
 ```sh
 # Make pyenv download and install 3.10.2
+# You only need to run this command once
 pyenv install 3.10.2
+
+# The rest of the commands in this code block should be run
+# once for each project where you want to use poetry with pyenv
 
 # Tell pyenv to use 3.10 in this folder
 pyenv local 3.10.2
