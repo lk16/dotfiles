@@ -61,6 +61,18 @@ bind % split-window -h -c "#{pane_current_path}"
 ```
 
 
-
 ### Recommended plugins
 - [Tmux resurrect](https://github.com/tmux-plugins/tmux-resurrect) after system restart your session will be restored
+
+### Installing tmux plugins
+To install plugins:
+
+```sh
+# Clone tmux plugin manager
+git clone -q https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Update tmux.conf with the plugins you want (see my tmux.conf for examples)
+
+# This installs the plugins
+~/.tmux/plugins/tpm/bin/install_plugins
+```
