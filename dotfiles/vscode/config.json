@@ -32,7 +32,8 @@
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/.venv/**": true,
-        "**/venv/**": true
+        "**/venv/**": true,
+        "**/__pycache__/**": true,
     },
     "go.toolsManagement.autoUpdate": true,
     "liveshare.launcherClient": "visualStudioCode",
