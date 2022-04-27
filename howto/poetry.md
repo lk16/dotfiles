@@ -86,6 +86,7 @@ Before merging the fix/feature:
 - Implement the fix/feature to your library
 - Update the `version` in the section `[tool.poetry]` in `pyproject.toml` in the root of the library repo
 - Be sure this is all included in your branch
+- Update the changelog
 - Make an PR/MR and get your branch merged
 
 After merging:
