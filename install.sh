@@ -35,6 +35,10 @@ ln -s $DOTFILES_ROOT/dotfiles/tmux/config.tmux ~/.tmux.conf
 # vscode config
 ln -s $DOTFILES_ROOT/dotfiles/vscode/config.json ~/.config/Code/User/settings.json
 
+# -------- setup global git ignore --------
+
+git config --global core.excludesfile ~/.gitignore
+
 # -------- setup tmux config --------
 
 # copy default tmux toolbar conf
