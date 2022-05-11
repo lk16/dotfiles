@@ -18,8 +18,7 @@
         "**/__pycache__": true,
         "**/.vscode": true,
         "**/.mypy_cache": true,
-        "**/.pytest_cache": true,
-
+        "**/.pytest_cache": true
     },
     "files.associations": {
         "*.env": "shellscript",
@@ -33,7 +32,7 @@
         "**/.git/subtree-cache/**": true,
         "**/.venv/**": true,
         "**/venv/**": true,
-        "**/__pycache__/**": true,
+        "**/__pycache__/**": true
     },
     "go.toolsManagement.autoUpdate": true,
     "liveshare.launcherClient": "visualStudioCode",
