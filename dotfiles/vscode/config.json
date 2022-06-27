@@ -9,16 +9,13 @@
     "editor.bracketPairColorization.enabled": true,
     "explorer.confirmDragAndDrop": false,
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "**/__pycache__": true,
-        "**/.vscode": true,
+        "**/.git": true,
         "**/.mypy_cache": true,
-        "**/.pytest_cache": true
+        "**/.pytest_cache": true,
+        "**/.venv": true,
+        "**/.vscode": true,
+        "**/venv": true,
     },
     "files.associations": {
         "*.env": "shellscript",
@@ -28,11 +25,13 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.watcherExclude": {
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
-        "**/.venv/**": true,
-        "**/venv/**": true,
-        "**/__pycache__/**": true
+        "**/__pycache__": true,
+        "**/.git": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+        "**/.venv": true,
+        "**/.vscode": true,
+        "**/venv": true,
     },
     "go.toolsManagement.autoUpdate": true,
     "liveshare.launcherClient": "visualStudioCode",
@@ -48,5 +47,5 @@
     "workbench.enableExperiments": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.startupEditor": "none",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 2
 }
