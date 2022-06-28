@@ -34,6 +34,7 @@ COMMON_TOOLS = [
 MULTIMEDIA = [
     "brave-browser",
     "discord",
+    "obs",
     "signal-desktop",
     "spotify",
     "vlc",
