@@ -16,13 +16,16 @@ EXTERNAL_DEPENDENCIES = [
 ]
 
 COMMON_TOOLS = [
+    "argocd",
     "dbeaver",
+    "doctl",
     "code",
     "docker",
     "docker-compose",
     "git",
     "go",
     "htop",
+    "kustomize",
     "marp",
     "nano",
     "pre-commit",
