@@ -67,5 +67,9 @@ function noise() {
 }
 
 function newticket() {
-    glab issue create -t "$1" -l 'TODO' -d '' -a luuk.verweij
+    if [ "$#" -ne 2 ]; then
+        echo "Usage: newticket <title> <description>"
+        return
+    fi
+    glab issue create -t "$1" -l 'TODO' -d "$2" -a luuk.verweij
 }
