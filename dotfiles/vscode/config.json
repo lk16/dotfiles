@@ -1,8 +1,7 @@
 {
-    "breadcrumbs.enabled": false,
     "diffEditor.renderSideBySide": false,
     "editor.minimap.enabled": false,
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.renderWhitespace": "none",
     "editor.wordBasedSuggestionsMode": "matchingDocuments",
@@ -47,5 +46,6 @@
     "workbench.enableExperiments": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.startupEditor": "none",
+    "breadcrumbs.enabled": false,
     "window.zoomLevel": 2
 }
