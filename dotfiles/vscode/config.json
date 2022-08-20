@@ -46,6 +46,6 @@
     "workbench.enableExperiments": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.startupEditor": "none",
-    "breadcrumbs.enabled": false,
-    "window.zoomLevel": 2
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 1
 }

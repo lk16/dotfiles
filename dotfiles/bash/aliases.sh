@@ -35,6 +35,7 @@ alias ggpf="git push --force-with-lease"
 alias gb="git branch --show-current"
 
 alias gggs='tools global-git-status'
+alias ggtop='git shortlog --summary --email | sort -rn'
 
 # allows using "git conflicts" to list conflicting files
 git config --global alias.conflicts "diff --name-only --diff-filter=U"
