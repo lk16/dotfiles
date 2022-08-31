@@ -46,7 +46,7 @@ alias dps="docker-compose ps"
 
 alias alert="mplayer $DOTFILES_ROOT/tools/airhorn.mp3 -loop 0 > /dev/null 2>&1"
 
-alias dc="docker-compose"
+alias dc="docker compose"
 
 alias killdocker='docker ps -q | xargs docker stop'
 
