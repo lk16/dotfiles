@@ -52,4 +52,4 @@ alias killdocker='docker ps -q | xargs docker stop'
 
 alias plock='poetry lock --no-update'
 
-alias pir='poetry install --remove-untracked'
+alias pir='poetry install --sync'
