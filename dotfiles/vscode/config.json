@@ -33,7 +33,6 @@
         "**/venv": true,
     },
     "go.toolsManagement.autoUpdate": true,
-    "liveshare.launcherClient": "visualStudioCode",
     "markdown-preview-enhanced.previewTheme": "monokai.css",
     "markdown-preview-enhanced.mermaidTheme": "dark",
     "redhat.telemetry.enabled": false,
@@ -48,4 +47,9 @@
     "workbench.startupEditor": "none",
     "extensions.ignoreRecommendations": true,
     "window.zoomLevel": 1,
+    "python.formatting.provider": "black",
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",  // Using ${userHome} doesn't work.
 }
