@@ -22,3 +22,14 @@ amixer -D pulse sset Master 5%+
 # volume down
 amixer -D pulse sset Master 5%-
 ```
+
+### Forward game to discord on linux
+- Install [soundux](https://soundux.rocks/)
+- Restart discord
+- Run soundux
+- Join discord call
+- Refresh `output application` (right top)
+- Select discord
+- Click `pass through` (right bottom)
+- Select game to pass through
+- It should work
