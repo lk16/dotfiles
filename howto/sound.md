@@ -33,3 +33,16 @@ amixer -D pulse sset Master 5%-
 - Click `pass through` (right bottom)
 - Select game to pass through
 - It should work
+
+
+### Setup guitarix on linux
+- Setup `qjackctl`, see [here](https://askubuntu.com/a/935564)
+- Check if user is in `audio` group by running `groups`
+- If not add with `sudo adduser $USER audio`
+- Run `newgrp audio` to reload groups and confirm with `groups`
+- Run `qjackctl`
+- Set sample rate to `88200`
+- In `qjackctl` open the `Connect` window and connect these:
+    - `system` `capture_1` to `gx_head_amp` `in_0`
+    - `gx_head_amp` `out_0` to `gx_head_fx` `in_0`
+    - `gx_head_fx` `out_0` to `system` `playback_1`
