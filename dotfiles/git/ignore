@@ -18,3 +18,6 @@ CMakeCache.txt
 CMakeFiles/
 CMakeLists.txt
 cmake_install.cmake
+
+# mypy
+.dmypy.json
