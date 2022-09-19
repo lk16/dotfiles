@@ -46,10 +46,9 @@
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.startupEditor": "none",
     "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 1,
     "python.formatting.provider": "black",
     "[python]": {
         "editor.formatOnSave": true
     },
-    "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",  // Using ${userHome} doesn't work.
+    "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black", // Using ${userHome} doesn't work.
 }

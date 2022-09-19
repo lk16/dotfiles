@@ -33,3 +33,8 @@ export QT_STYLE_OVERRIDE=kvantum
 
 # setup cargo if installed
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# load direnv if installed
+if which direnv > /dev/null; then
+    eval "$(direnv hook bash)"
+fi
