@@ -50,6 +50,5 @@
     "[python]": {
         "editor.formatOnSave": true
     },
-    "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",  // Using ${userHome} doesn't work.
-    "window.zoomLevel": 1,
+    "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",
 }
