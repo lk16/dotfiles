@@ -49,9 +49,9 @@ function gp() {
     local branch=$(git branch --show-current)
 
     if git branch -a | grep "origin/$branch" >/dev/null; then
-        git push
+        git push $@
     else
-        git push -u origin $branch
+        git push -u origin $branch $@
     fi
 }
 
