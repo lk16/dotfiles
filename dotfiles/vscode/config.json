@@ -51,4 +51,5 @@
         "editor.formatOnSave": true
     },
     "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",
+    "window.zoomLevel": 1,
 }
