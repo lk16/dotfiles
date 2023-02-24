@@ -21,3 +21,6 @@ cmake_install.cmake
 
 # mypy
 .dmypy.json
+
+# ignored folder
+ignored/*
