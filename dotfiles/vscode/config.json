@@ -50,6 +50,6 @@
     "[python]": {
         "editor.formatOnSave": true
     },
-    "python.formatting.blackPath": "/home/luuk/.local/bin/black",
-    "window.zoomLevel": 2
+    "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",
+    "window.zoomLevel": 1,
 }

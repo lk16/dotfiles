@@ -71,5 +71,5 @@ function newticket() {
         echo "Usage: newticket <title> <description>"
         return
     fi
-    glab issue create -t "$1" -l 'TODO' -d "$2" -a luuk.verweij
+    glab issue create -t "$1" -d "$2" -a luuk.verweij
 }
