@@ -51,5 +51,5 @@
         "editor.formatOnSave": true
     },
     "python.formatting.blackPath": "/home/luuk/.local/bin/black",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 2
 }

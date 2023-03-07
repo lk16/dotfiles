@@ -52,10 +52,12 @@ def create_merge_request(wip: bool, web: bool) -> None:
     if ticket.isnumeric():
         maybe_hash_char = "#"
 
-    command = f"glab mr create -t '{prefix}[{maybe_hash_char}{ticket}] {title}' --fill --yes --remove-source-branch"
+    command = f"glab mr create -t '{prefix}[{maybe_hash_char}{ticket}] {title}' --related-issue {ticket} --fill --yes --remove-source-branch"
+    print("running:", command)
 
     try:
-        run_command(command)
+        output = run_command(command)
+        print(output)
     except CalledProcessError as e:
         if "could not find any commits between" in str(e.stderr):
             print("Creating MR failed: no commits between source and target branch.")
