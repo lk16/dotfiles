@@ -32,6 +32,7 @@
         "**/.vscode": true,
         "**/venv": true,
     },
+    "git.openRepositoryInParentFolders": "always",
     "go.toolsManagement.autoUpdate": true,
     "markdown-preview-enhanced.previewTheme": "monokai.css",
     "markdown-preview-enhanced.mermaidTheme": "dark",
@@ -51,9 +52,9 @@
         "editor.formatOnSave": true
     },
     "[rust]": {
-        "editor.formatOnSave": true,
+        "editor.formatOnSave": true
     },
     "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",
     "python.analysis.inlayHints.variableTypes": true,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 1
 }
