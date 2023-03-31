@@ -9,6 +9,10 @@
 # pyenv
 .python-version
 
+# pdm
+.pdm-python
+build/
+
 # vscode
 *.code-workspace
 .vscode/
