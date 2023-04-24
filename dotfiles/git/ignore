@@ -28,3 +28,6 @@ cmake_install.cmake
 
 # ignored folder
 ignored/*
+
+# virtual environments
+.venv/
