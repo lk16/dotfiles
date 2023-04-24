@@ -54,7 +54,7 @@
     "[rust]": {
         "editor.formatOnSave": true
     },
-    "python.formatting.blackPath": "/home/luuk/.pyenv/shims/black",
+    "python.formatting.blackPath": "/home/luuk/.local/bin/black",
     "python.analysis.inlayHints.variableTypes": true,
     "window.zoomLevel": 1
 }
