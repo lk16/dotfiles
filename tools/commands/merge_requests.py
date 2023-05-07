@@ -52,8 +52,7 @@ def create_merge_request(wip: bool, web: bool) -> None:
     if ticket.isnumeric():
         maybe_hash_char = "#"
 
-    command = f"glab mr create -t '{prefix}[{maybe_hash_char}{ticket}] {title}' --related-issue {ticket} --fill --yes --remove-source-branch"
-    print("running:", command)
+    command = f"glab mr create -t '{prefix}[{maybe_hash_char}{ticket}] {title}' --fill --yes --remove-source-branch"
 
     try:
         output = run_command(command)
@@ -62,7 +61,14 @@ def create_merge_request(wip: bool, web: bool) -> None:
         if "could not find any commits between" in str(e.stderr):
             print("Creating MR failed: no commits between source and target branch.")
             exit(1)
+        print("Creating MR failed.")
+        print(f"stdout: {e.stdout.decode()}")
+        print(f"stderr: {e.stderr.decode()}")
+        exit(1)
+    except Exception as e:
+        print("Creating MR failed.")
+        print(f"error: {e}")
+        exit(1)
 
     if web:
         run_command("glab mr view --web")
-        return

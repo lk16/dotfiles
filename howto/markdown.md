@@ -13,7 +13,6 @@ pie title Who ate the cake?
          "Alice" : 9
          "Bob" : 1
          "Charlie": 3
-
 ```
 
 ## Flowchart
