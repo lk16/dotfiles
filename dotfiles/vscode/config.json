@@ -54,7 +54,16 @@
     "[rust]": {
         "editor.formatOnSave": true
     },
-    "python.formatting.blackPath": "/home/luuk/.local/bin/black",
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/__pypackages__/3.10/lib",
+        "${workspaceFolder}/__pypackages__/3.11/lib"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/__pypackages__/3.10/lib",
+        "${workspaceFolder}/__pypackages__/3.11/lib"
+    ],
+    "python.formatting.blackPath": "/home/luuk/.pyenv/versions/3.10.2/bin/black",
     "python.analysis.inlayHints.variableTypes": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "update.showReleaseNotes": false
 }
