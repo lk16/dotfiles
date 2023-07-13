@@ -64,7 +64,6 @@
     ],
     "python.formatting.blackPath": "/home/luuk/.local/bin/black",
     "python.analysis.inlayHints.variableTypes": true,
-    "window.zoomLevel": 1,
     "workbench.iconTheme": "material-icon-theme",
     "update.showReleaseNotes": false
 }
