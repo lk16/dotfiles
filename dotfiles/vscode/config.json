@@ -9,11 +9,13 @@
     "explorer.confirmDragAndDrop": false,
     "files.exclude": {
         "**/__pycache__": true,
+        "**/__pypackages__": true,
         "**/.git": true,
         "**/.mypy_cache": true,
         "**/.pytest_cache": true,
         "**/.venv": true,
         "**/.vscode": true,
+        "**/build": true,
         "**/venv": true,
     },
     "files.associations": {
