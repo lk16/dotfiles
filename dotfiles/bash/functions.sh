@@ -23,6 +23,9 @@ function highlight(){
 
 function mr(){
     (
+        echo $PWD | grep koala-data-api >/dev/null && echo "can't use mr() command for koala-data-api"
+        echo $PWD | grep koala-data-api >/dev/null && return 1
+
         . $DOTFILES_ROOT/tools/venv/bin/activate
         $DOTFILES_ROOT/tools/manage.py create-merge-request "$@"
     )
