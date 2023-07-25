@@ -1,5 +1,5 @@
 # scrollback size
-set -g history-limit 10000
+set -g history-limit 100000
 
 # reload with r
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
