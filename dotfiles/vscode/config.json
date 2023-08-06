@@ -49,9 +49,9 @@
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.startupEditor": "none",
     "extensions.ignoreRecommendations": true,
-    "python.formatting.provider": "black",
     "[python]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "[rust]": {
         "editor.formatOnSave": true
@@ -64,7 +64,6 @@
         "${workspaceFolder}/__pypackages__/3.10/lib",
         "${workspaceFolder}/__pypackages__/3.11/lib"
     ],
-    "python.formatting.blackPath": "/home/luuk/.local/bin/black",
     "python.analysis.inlayHints.variableTypes": true,
     "workbench.iconTheme": "material-icon-theme",
     "update.showReleaseNotes": false,
