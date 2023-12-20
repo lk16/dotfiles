@@ -42,9 +42,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
     "window.title": "${rootName}${separator}${dirty}${activeEditorShort}",
-    "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Monokai",
-    "workbench.editor.untitled.hint": "hidden",
     "workbench.enableExperiments": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.startupEditor": "none",
@@ -67,5 +65,7 @@
     "python.analysis.inlayHints.variableTypes": true,
     "workbench.iconTheme": "material-icon-theme",
     "update.showReleaseNotes": false,
-    "window.zoomLevel": 1
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.empty.hint": "hidden",
+    "window.zoomLevel": 2
 }
