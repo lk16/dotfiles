@@ -1,10 +1,9 @@
 {
     "diffEditor.renderSideBySide": false,
     "editor.minimap.enabled": false,
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.renderWhitespace": "none",
-    "editor.wordBasedSuggestionsMode": "matchingDocuments",
     "editor.bracketPairColorization.enabled": true,
     "explorer.confirmDragAndDrop": false,
     "files.exclude": {
@@ -35,7 +34,6 @@
         "**/venv": true
     },
     "git.openRepositoryInParentFolders": "always",
-    "go.toolsManagement.autoUpdate": true,
     "markdown-preview-enhanced.previewTheme": "monokai.css",
     "markdown-preview-enhanced.mermaidTheme": "dark",
     "redhat.telemetry.enabled": false,
@@ -58,6 +56,9 @@
         "${workspaceFolder}/__pypackages__/3.10/lib",
         "${workspaceFolder}/__pypackages__/3.11/lib"
     ],
+    "update.showReleaseNotes": false,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.activityBar.location": "hidden",
     "python.analysis.extraPaths": [
         "${workspaceFolder}/__pypackages__/3.10/lib",
         "${workspaceFolder}/__pypackages__/3.11/lib"
