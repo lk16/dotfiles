@@ -74,4 +74,6 @@
     "window.zoomLevel": 2,
     "rust-analyzer.inlayHints.parameterHints.enable": false,
     "ruff.lint.run": "onSave",
+    "python.analysis.inlayHints.variableTypes": true,
+    "workbench.iconTheme": "material-icon-theme",
 }
