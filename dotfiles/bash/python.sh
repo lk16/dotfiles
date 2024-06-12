@@ -13,3 +13,6 @@ export PYTEST_ADDOPTS="--color=yes"
 
 # force colored output of mypy
 export MYPY_FORCE_COLOR=1
+
+# disable unreadable Typer stacktrace
+    export _TYPER_STANDARD_TRACEBACK=1

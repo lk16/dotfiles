@@ -47,8 +47,16 @@
     "extensions.ignoreRecommendations": true,
     "[python]": {
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+        }
     },
+    "ruff.lint.args": [
+        "--config=pyproject.toml"
+    ],
+    "ruff.organizeImports": true,
+    "ruff.fixAll": true,
+    "editor.formatOnSave": true,
     "[rust]": {
         "editor.formatOnSave": true
     },
@@ -63,6 +71,7 @@
         "${workspaceFolder}/__pypackages__/3.10/lib",
         "${workspaceFolder}/__pypackages__/3.11/lib"
     ],
-    "window.zoomLevel": 1,
-
+    "window.zoomLevel": 2,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "ruff.lint.run": "onSave",
 }
