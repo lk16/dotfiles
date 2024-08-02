@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # load rust/cargo env if it exists
-[ -f ~/.cargo/env ] && . ~/.cargo/env
+[ -f $HOME/.cargo/bin ] && $HOME/.cargo/bin
