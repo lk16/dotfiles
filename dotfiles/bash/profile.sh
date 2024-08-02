@@ -25,14 +25,12 @@ fi
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/.pulumi/bin" ] && PATH="$HOME/.pulumi/bin:$PATH"
+[ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
 
 # setup pyenv
 eval "$(pyenv init --path)"
 
 export QT_STYLE_OVERRIDE=kvantum
-
-# setup cargo if installed
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # load direnv if installed
 if which direnv > /dev/null; then

@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# If for ANY reason PATH becomes empty, keep the shell usable
+if [ -z "${PATH}" ]; then
+    PATH="/bin:/usr/bin:/usr/local/bin"
+fi
+
 export DOTFILES_ROOT=$(cd $(dirname $(readlink -e ~/.bashrc))/../..; pwd)
 
 [ -f ~/.notes_root ] && export NOTES_ROOT=$(cat ~/.notes_root)
@@ -17,13 +22,11 @@ for script in $(find $DOTFILES_ROOT/dotfiles/bash -name '*.sh' | grep -v '/\(rc\
     . $script
 done
 
-[ -f ~/.server_aliases.sh ] && echo "please move ~/.server_aliases.sh to $DOTFILES_ROOT/dotfiles/bash/servers.sh"
-
 # add to PATH if they exist
 [ -d ~/.local/bin ] && PATH=$PATH:~/.local/bin
 [ -d /opt/bin ] && PATH=$PATH:/opt/bin
 [ -d /usr/local/bin ] && PATH=$PATH:/usr/local/bin
 
 # remove duplicates from PATH
-PATH=$(python -c 'import os; from collections import OrderedDict; \
+PATH=$(/usr/bin/python -c 'import os; from collections import OrderedDict; \
     l=os.environ["PATH"].split(":"); print(":".join(OrderedDict.fromkeys(l)))' )
