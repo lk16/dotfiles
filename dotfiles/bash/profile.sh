@@ -36,3 +36,5 @@ export QT_STYLE_OVERRIDE=kvantum
 if which direnv > /dev/null; then
     eval "$(direnv hook bash)"
 fi
+
+if [ -e /home/luuk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/luuk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
