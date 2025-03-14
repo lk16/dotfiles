@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # make sure ssh key forwarding works
-[ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa 2>&1 | grep -v 'Identity added:'
+[ -f ~/.ssh/id_rsa ] && eval $(keychain --eval --quiet id_rsa -q)
 
 # add work key if present
 [ -f ~/.ssh/id_rsa_work ] && eval $(keychain --eval id_rsa_work -q)
