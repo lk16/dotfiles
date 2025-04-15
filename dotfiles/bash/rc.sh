@@ -28,6 +28,7 @@ done
 [ -d ~/.local/bin ] && PATH=$PATH:~/.local/bin
 [ -d /opt/bin ] && PATH=$PATH:/opt/bin
 [ -d /usr/local/bin ] && PATH=$PATH:/usr/local/bin
+[ -d /usr/local/go/bin ] && PATH=$PATH:/usr/local/go/bin
 
 # remove duplicates from PATH
 PATH=$(/usr/bin/python -c 'import os; from collections import OrderedDict; \
