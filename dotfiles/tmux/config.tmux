@@ -31,3 +31,6 @@ set -g @continuum-restore 'on'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
+
+# Use C-b C-s to save pane log to file in home folder
+bind-key C-s run-shell 'tmux capture-pane -S - -E - -p > ~/tmux-output-$(date +%s).txt'
