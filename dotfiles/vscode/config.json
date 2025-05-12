@@ -80,4 +80,5 @@
     "workbench.editorAssociations": {
         "*.csv": "default"
     },
+    "breadcrumbs.enabled": false,
 }
