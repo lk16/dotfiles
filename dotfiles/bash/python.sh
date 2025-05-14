@@ -3,6 +3,8 @@
 [ -d ~/.pyenv/bin ] && PATH=$PATH:~/.pyenv/bin
 [ -d ~/.poetry/bin ] && PATH=$PATH:~/.poetry/bin
 
+[ -f ~/.rye/env ] && source ~/.rye/env
+
 if which pyenv > /dev/null; then
     eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
@@ -15,4 +17,4 @@ export PYTEST_ADDOPTS="--color=yes"
 export MYPY_FORCE_COLOR=1
 
 # disable unreadable Typer stacktrace
-    export _TYPER_STANDARD_TRACEBACK=1
+export _TYPER_STANDARD_TRACEBACK=1
