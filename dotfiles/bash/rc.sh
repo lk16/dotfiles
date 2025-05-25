@@ -11,8 +11,6 @@ export DOTFILES_ROOT=$(cd $(dirname $(readlink -e ~/.bashrc))/../..; pwd)
 
 export EDITOR=nano
 
-[ -f ~/.notes_root ] && export NOTES_ROOT=$(cat ~/.notes_root)
-
 # If not running interactively, don't do anything else
 case $- in
     *i*) ;;
