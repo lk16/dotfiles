@@ -44,7 +44,7 @@ alias json="python3 -m json.tool"
 
 alias dps="docker-compose ps"
 
-alias alert="mplayer $DOTFILES_ROOT/tools/airhorn.mp3 -loop 0 > /dev/null 2>&1"
+alias alert="mplayer $DOTFILES_ROOT/audio/airhorn.mp3 -loop 0 > /dev/null 2>&1"
 
 alias dc="docker compose"
 
