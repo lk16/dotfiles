@@ -21,14 +21,10 @@ Configure this command with your prefered hotkey: `bash -ci 'noise'`
 
 ## Tools
 These are run with `tools <command>`.
-* `check-common-tools`: check if my commonly used tools are installed
-* `check-external-dependencies`: check if external binaries that this project runs are installed
-* `csvcut`: very basic verison of UNIX `cut` but for CSV files
-* `get-statusbar`: generate tmux statusbar items, see more info below
-* `highlight`: reads lines from stdin and outputs those lines on stdout highlighting terms in various colors specified by flags
-* `new-daily-notes`: creates a new notes file from yesterday's notes
-* `vscode-extensions`: list/edit/save a list of VS Code extensions
+* `global-git-status`: will flag any uncommited changes or branches on all repositories up to 4 directories deeep in your homefolder, useful at end of day
+* `tmux-statusbar`: generate tmux statusbar items, see more info below
 * `tmux-broadcast`: send a command to every window/pane in a tmux session
+
 
 ## Tmux status bar items
 * `battery`: displays how much your laptop battery is charged
