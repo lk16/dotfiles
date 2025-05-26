@@ -1,6 +1,30 @@
+import subprocess
+from typing import List
+
 import click
-from helpers.color import colorize_text
-from helpers.command import run_command
+
+
+def colorize_text(text: str, color: str) -> str:
+    markers = {
+        "red": "\033[1;31m",
+        "green": "\033[1;32m",
+        "yellow": "\033[1;33m",
+        "blue": "\033[1;34m",
+        "purple": "\033[1;35m",
+        "cyan": "\033[1;36m",
+        "white": "\033[1;37m",
+        "reset": "\033[0m",
+    }
+
+    return "{}{}{}".format(markers[color], text, markers["reset"])
+
+
+def run_command(command: str) -> List[str]:
+    process: subprocess.CompletedProcess[bytes] = subprocess.run(
+        command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True
+    )
+
+    return process.stdout.decode("utf-8").strip().split("\n")
 
 
 @click.command()

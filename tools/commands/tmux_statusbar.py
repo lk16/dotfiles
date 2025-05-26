@@ -1,21 +1,41 @@
 import datetime
 import json
+import os
 import re
 import subprocess
 import sys
 import time
 import traceback
+from pathlib import Path
 from typing import Any, Dict, List, Type
 
 import click
 import psutil
 import requests
-from helpers.cache import load_cache, store_cache
-from helpers.path import DOTFILES_ROOT
+
+DOTFILES_ROOT = Path(os.environ["DOTFILES_ROOT"])
 
 CONFIG_FILE = DOTFILES_ROOT / "tools/statusbar_conf.json"
+CACHE_ROOT = DOTFILES_ROOT / "tools/.cache"
 
 EXPIRES_IMMIEDIATELY = -1
+
+
+def load_cache(name: str, default: Any) -> Any:
+    CACHE_ROOT.mkdir(exist_ok=True)
+
+    try:
+        file = open(CACHE_ROOT / f"{name}.json", "r")
+    except FileNotFoundError:
+        return default
+    return json.load(file)
+
+
+def store_cache(name: str, data: Any) -> Any:
+    CACHE_ROOT.mkdir(exist_ok=True)
+
+    file = open(CACHE_ROOT / f"{name}.json", "w")
+    return json.dump(data, file)
 
 
 class SkipItemException(Exception):
