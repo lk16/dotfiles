@@ -6,6 +6,9 @@ if [ -z "${PATH}" ]; then
     PATH="/bin:/usr/bin:/usr/local/bin"
 fi
 
+# TODO remove this
+DOTFILES_ROOT=$(dirname $(dirname $(dirname $(realpath "${BASH_SOURCE[0]}"))))
+
 # Default editor
 export EDITOR=nano
 
@@ -257,11 +260,6 @@ __prompt_command() {
 }
 
 # --- Python tools ---
-
-if which pyenv > /dev/null; then
-    eval "$(pyenv init --path)"
-    eval "$(pyenv virtualenv-init -)"
-fi
 
 # force colored output of pytest
 export PYTEST_ADDOPTS="--color=yes"
