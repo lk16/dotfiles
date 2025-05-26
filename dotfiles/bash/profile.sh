@@ -9,11 +9,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if which pyenv > /dev/null; then
-    eval "$(pyenv init --path)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
 export QT_STYLE_OVERRIDE=kvantum
 
 if [ -e /home/luuk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/luuk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

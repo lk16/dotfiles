@@ -7,7 +7,7 @@ if [ -z "${PATH}" ]; then
 fi
 
 # TODO remove this
-DOTFILES_ROOT=$(dirname $(dirname $(dirname $(realpath "${BASH_SOURCE[0]}"))))
+export DOTFILES_ROOT=$(dirname $(dirname $(dirname $(realpath "${BASH_SOURCE[0]}"))))
 
 # Default editor
 export EDITOR=nano
@@ -19,30 +19,26 @@ case $- in
 esac
 
 # Load auth scripts if it exists
-[ -f ~/.auth.sh ] && . ~/.auth.sh
+[ -f ./.auth.sh ] && . ./.auth.sh
 
 # add to PATH if they exist
-[ -d ~/.local/bin ] && PATH=$PATH:~/.local/bin
+[ -d $HOME/.local/bin ] && PATH=$PATH:$HOME/.local/bin
 [ -d /opt/bin ] && PATH=$PATH:/opt/bin
 [ -d /usr/local/bin ] && PATH=$PATH:/usr/local/bin
 
-[ -d ~/.cargo/bin ] && PATH=$PATH:~/.cargo/bin
+[ -d $HOME/.cargo/bin ] && PATH=$PATH:$HOME/.cargo/bin
 
 [ -d /usr/local/go/bin ] && PATH=$PATH:/usr/local/go/bin
-
-export PYENV_ROOT="~/.pyenv"
-[ -d ~/.pyenv ] && export PATH="$PYENV_ROOT/bin:$PATH"
-[ -d ~/.pyenv ] && eval "$(pyenv init --path)"
 
 # load direnv if installed
 if which direnv > /dev/null; then
     eval "$(direnv hook bash)"
 fi
 
-[ -f ~/.rye/env ] && source ~/.rye/env
+[ -f $HOME/.rye/env ] && source $HOME/.rye/env
 
-# Set GOBIN to ~/.local/bin if it exists, Go will use this to install binaries
-[ -d ~/.local/bin ] && export GOBIN=~/.local/bin
+# Set GOBIN to $HOME/.local/bin if it exists, Go will use this to install binaries
+[ -d $HOME/.local/bin ] && export GOBIN=$HOME/.local/bin
 
 
 # remove duplicates from PATH
@@ -273,7 +269,7 @@ export _TYPER_STANDARD_TRACEBACK=1
 # --- SSH config ---
 
 # make sure ssh key forwarding works
-[ -f ~/.ssh/id_rsa ] && eval $(keychain --eval --quiet id_rsa -q)
+[ -f $HOME/.ssh/id_rsa ] && eval $(keychain --eval --quiet id_rsa -q)
 
 # add work key if present
-[ -f ~/.ssh/id_rsa_work ] && eval $(keychain --eval id_rsa_work -q)
+[ -f $HOME/.ssh/id_rsa_work ] && eval $(keychain --eval id_rsa_work -q)
