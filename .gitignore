@@ -4,6 +4,6 @@ tools/.cache
 __pycache__/
 statusbar_conf.json
 *.code-workspace
-dotfiles/bash/auth_*.sh
+dotfiles/bash/auth.sh
 # TODO update now that we have dotfiles/git/ignore
 dotfiles/bash/servers.sh

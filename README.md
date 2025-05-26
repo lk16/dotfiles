@@ -3,7 +3,6 @@
 
 This repo contains:
 * `dotfiles`: actual dotfiles and other config files.
-* `howto`: commands and tricks, somewhat unorganized.
 * `tools`: a few handy python scripts, see tools section below.
 
 ## Setup dotfiles and tools
@@ -18,13 +17,6 @@ The script is written such that it can be run again if parts of the installation
 
 ## Setup white noise hotkey
 Configure this command with your prefered hotkey: `bash -ci 'noise'`
-
-## Tools
-These are run with `tools <command>`.
-* `global-git-status`: will flag any uncommited changes or branches on all repositories up to 4 directories deeep in your homefolder, useful at end of day
-* `tmux-statusbar`: generate tmux statusbar items, see more info below
-* `tmux-broadcast`: send a command to every window/pane in a tmux session
-
 
 ## Tmux status bar items
 * `battery`: displays how much your laptop battery is charged
