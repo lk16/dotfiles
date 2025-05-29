@@ -18,9 +18,6 @@ case $- in
       *) return;;
 esac
 
-# Load auth scripts if it exists
-[ -f ./.auth.sh ] && . ./.auth.sh
-
 # add to PATH if they exist
 [ -d $HOME/.local/bin ] && PATH=$PATH:$HOME/.local/bin
 [ -d /opt/bin ] && PATH=$PATH:/opt/bin
@@ -29,11 +26,6 @@ esac
 [ -d $HOME/.cargo/bin ] && PATH=$PATH:$HOME/.cargo/bin
 
 [ -d /usr/local/go/bin ] && PATH=$PATH:/usr/local/go/bin
-
-# load direnv if installed
-if which direnv > /dev/null; then
-    eval "$(direnv hook bash)"
-fi
 
 [ -f $HOME/.rye/env ] && source $HOME/.rye/env
 
@@ -273,3 +265,8 @@ export _TYPER_STANDARD_TRACEBACK=1
 
 # add work key if present
 [ -f $HOME/.ssh/id_rsa_work ] && eval $(keychain --eval id_rsa_work -q)
+
+# load direnv if installed
+if which direnv > /dev/null; then
+    eval "$(direnv hook bash)"
+fi
