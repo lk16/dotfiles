@@ -199,8 +199,7 @@ function gggs() {
     SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
     # run the global git status command
-    cd $SCRIPT_DIR/../../tools
-    rye run global-git-status
+    rye run --pyproject "$SCRIPT_DIR/../../tools/pyproject.toml" global-git-status
 }
 
 # Toggle white noise on loop, usually bound to hotkey `super` + `space`
