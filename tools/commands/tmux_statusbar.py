@@ -1,6 +1,5 @@
 import datetime
 import json
-import os
 import re
 import subprocess
 import sys
@@ -13,10 +12,9 @@ import click
 import psutil
 import requests
 
-DOTFILES_ROOT = Path(os.environ["DOTFILES_ROOT"])
 
-CONFIG_FILE = DOTFILES_ROOT / "tools/statusbar_conf.json"
-CACHE_ROOT = DOTFILES_ROOT / "tools/.cache"
+CONFIG_FILE = (Path(__file__).parent / "../../tools/statusbar_conf.json").resolve()
+CACHE_ROOT = (Path(__file__).parent / "../../tools/.cache").resolve()
 
 EXPIRES_IMMIEDIATELY = -1
 

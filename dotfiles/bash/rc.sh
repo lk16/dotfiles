@@ -6,9 +6,6 @@ if [ -z "${PATH}" ]; then
     PATH="/bin:/usr/bin:/usr/local/bin"
 fi
 
-# TODO remove this
-export DOTFILES_ROOT=$(dirname $(dirname $(dirname $(realpath "${BASH_SOURCE[0]}"))))
-
 # Default editor
 export EDITOR=nano
 
@@ -175,8 +172,6 @@ alias ggpf="git push --force-with-lease"
 # show current branch
 alias gb="git branch --show-current"
 
-# play airhorn sound
-alias alert="mplayer $DOTFILES_ROOT/audio/airhorn.mp3 -loop 0 > /dev/null 2>&1"
 
 # docker compose shortcut
 alias dc="docker compose"
@@ -211,7 +206,15 @@ function gggs() {
 # Toggle white noise on loop, usually bound to hotkey `super` + `space`
 function noise() {
     pkill -f 'mplayer.*noise.ogg' || \
-    (mplayer $DOTFILES_ROOT/audio/noise.ogg -loop 0 > /dev/null 2>&1 &)
+    (mplayer $SCRIPT_DIR/../../audio/noise.ogg -loop 0 > /dev/null 2>&1 &)
+}
+
+# Play airhorn sound
+function alert() {
+    # get the directory of this script
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+    mplayer $SCRIPT_DIR/../../audio/airhorn.mp3 -loop 0 > /dev/null 2>&1
 }
 
 # --- SSH config ---
