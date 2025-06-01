@@ -204,6 +204,9 @@ function gggs() {
 
 # Toggle white noise on loop, usually bound to hotkey `super` + `space`
 function noise() {
+    # get the directory of this script
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
     pkill -f 'mplayer.*noise.ogg' || \
     (mplayer $SCRIPT_DIR/../../audio/noise.ogg -loop 0 > /dev/null 2>&1 &)
 }
