@@ -31,6 +31,13 @@ ln -s $DOTFILES_ROOT/dotfiles/git/ignore ~/.gitignore
 ##### Tmux config
 
 * Setup default tmux statusbar config
+
+* Add symlink
+```sh
+ln -s $DOTFILES_ROOT/dotfiles/tmux/conf ~/.tmux.conf
+```
+
+
 ```sh
 cp -n $DOTFILES_ROOT/tools/statusbar_conf.json.default $DOTFILES_ROOT/tools/statusbar_conf.json
 ```
