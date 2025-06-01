@@ -1,0 +1,35 @@
+[project]
+name = "dotfiles"
+version = "0.1.0"
+description = "Add your description here"
+authors = [{ name = "Luuk Verweij", email = "luuk_verweij@msn.com" }]
+dependencies = [
+    "click>=8.2.1",
+    "psutil>=7.0.0",
+    "requests>=2.32.3",
+    "types-psutil>=7.0.0.20250601",
+]
+requires-python = ">= 3.8"
+
+[project.scripts]
+tmux-statusbar = "commands.tmux_statusbar:tmux_statusbar"
+global-git-status = "commands.global_git:global_git_status"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "mypy>=1.16.0",
+    "ruff>=0.11.12",
+    "types-psutil>=7.0.0.20250601",
+    "types-requests>=2.32.0.20250515",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["commands"]

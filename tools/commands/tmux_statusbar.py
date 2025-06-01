@@ -7,7 +7,7 @@ import sys
 import time
 import traceback
 from pathlib import Path
-from typing import Any, Dict, List, Type
+from typing import Any, Dict, List, Type, cast
 
 import click
 import psutil
@@ -86,7 +86,7 @@ class Weather(StatusBarItem):
     def expiry(self) -> int:
         return 60
 
-    def get_text(self):
+    def get_text(self) -> str:
         location = self.config["location"]
         api_key = self.config["api_key"]
 
@@ -194,7 +194,7 @@ def get_statusbar_item_text(
 
     if cache_item and (cache_item["expiry"] < int(time.time())):
         print(f"Loaded {item} from cache", file=sys.stderr)
-        return cache_item["text"]
+        return cast(str, cache_item["text"])
 
     print(f"Running {item}", file=sys.stderr)
     return status_bar_item.get_text()
@@ -244,3 +244,7 @@ def tmux_statusbar() -> None:
 
     store_cache("statusbar", cache)
     print("".join(statusbar))
+
+
+if __name__ == "__main__":
+    tmux_statusbar()

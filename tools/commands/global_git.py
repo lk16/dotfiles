@@ -74,3 +74,7 @@ def global_git_status() -> None:
             )
         )
         exit(1)
+
+
+if __name__ == "__main__":
+    global_git_status()

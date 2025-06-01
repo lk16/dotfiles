@@ -175,9 +175,6 @@ alias ggpf="git push --force-with-lease"
 # show current branch
 alias gb="git branch --show-current"
 
-# global git status
-alias gggs='tools global-git-status'
-
 # play airhorn sound
 alias alert="mplayer $DOTFILES_ROOT/audio/airhorn.mp3 -loop 0 > /dev/null 2>&1"
 
@@ -198,6 +195,17 @@ function gp() {
     else
         git push -u origin $branch $@
     fi
+}
+
+# global git status - show repositories with uncommitted and unpushed changes
+# This command finds folders in the home directory that contain a .git folder up to 4 levels deep
+function gggs() {
+    # get the directory of this script
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+    # run the global git status command
+    cd $SCRIPT_DIR/../../tools
+    rye run global-git-status
 }
 
 # Toggle white noise on loop, usually bound to hotkey `super` + `space`

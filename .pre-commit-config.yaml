@@ -7,26 +7,22 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
 
-  #  - repo: https://gitlab.com/pycqa/flake8
-  #    rev: 3.8.4
-  #    hooks:
-  #      - id: flake8
-
-  - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.6.4
+  - repo: local
     hooks:
-      - id: isort
-
-  - repo: https://github.com/psf/black
-    rev: 22.3.0
-    hooks:
-      - id: black
-
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.790
-    hooks:
-      - id: mypy
-        files: ^tools/
-        entry: mypy tools/
-        args: [--ignore-missing-imports]
+      - id: ruff-check
+        name: run ruff check
+        entry: bash -c "cd tools && rye run ruff check . --fix --config pyproject.toml"
+        language: system
         pass_filenames: false
+      - id: ruff-format
+        name: run ruff format
+        entry: bash -c "cd tools && rye run ruff format . --config pyproject.toml"
+        language: system
+        pass_filenames: false
+      - id: mypy
+        name: run mypy
+        entry: bash -c "cd tools && rye run mypy --strict commands"
+        language: system
+        pass_filenames: false
+        types:
+          - python
