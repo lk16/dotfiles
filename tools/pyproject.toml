@@ -9,7 +9,7 @@ dependencies = [
     "requests>=2.32.3",
     "types-psutil>=7.0.0.20250601",
 ]
-requires-python = ">= 3.8"
+requires-python = ">= 3.10"
 
 [project.scripts]
 tmux-statusbar = "commands.tmux_statusbar:tmux_statusbar"
