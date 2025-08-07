@@ -48,11 +48,11 @@ export _TYPER_STANDARD_TRACEBACK=1
 
 # --- Javascript ---
 
-if [ -d "$HOME/.nvm" ]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
+# if [ -d "$HOME/.nvm" ]; then
+#     export NVM_DIR="$HOME/.nvm"
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# fi
 
 # --- Prompt and shell options ---
 
@@ -121,10 +121,10 @@ __prompt_command() {
     USER_COMMAND_COLOR=$COLOR_LIGHT_PURPLE
 
     # add unwritten history item to ~/.bash_history
-    history -a
+    # history -a
 
     # reload history from ~/.bash_history
-    history -r
+    # history -r
 
     PS1="\[${USER_PROMPT_COLOR}\]\W \[${COLOR_LIGHT_GREEN}\]\$(parse_git_branch)\[${USER_PROMPT_COLOR}\]"
 
