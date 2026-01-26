@@ -32,6 +32,7 @@ esac
 mkdir -p $HOME/.local/bin $HOME/.local/go
 export GOBIN=$HOME/.local/bin
 export GOPATH=$HOME/.local/go
+export PATH=$PATH:$GOBIN:$GOPATH/bin
 
 # --- Python ---
 
