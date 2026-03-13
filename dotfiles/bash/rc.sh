@@ -173,12 +173,14 @@ alias ggpf="git push --force-with-lease"
 # show current branch
 alias gb="git branch --show-current"
 
-
 # docker compose shortcut
 alias dc="docker compose"
 
 # kill all docker containers
 alias killdocker='docker ps -q | xargs docker stop'
+
+# shortcut for workmux
+alias wm='workmux'
 
 # --- Functions ---
 
