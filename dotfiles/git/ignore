@@ -31,3 +31,5 @@ ignored/*
 
 # virtual environments
 .venv/
+
+**/.claude/settings.local.json
