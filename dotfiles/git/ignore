@@ -33,3 +33,4 @@ ignored/*
 .venv/
 
 **/.claude/settings.local.json
+/.claude-user
