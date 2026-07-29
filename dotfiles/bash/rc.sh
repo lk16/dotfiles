@@ -36,8 +36,6 @@ export PATH=$PATH:$GOBIN:$GOPATH/bin
 
 # --- Python ---
 
-[ -f $HOME/.rye/env ] && source $HOME/.rye/env
-
 # force colored output of pytest
 export PYTEST_ADDOPTS="--color=yes"
 
@@ -202,7 +200,7 @@ function gggs() {
     SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
     # run the global git status command
-    rye run --pyproject "$SCRIPT_DIR/../../tools/pyproject.toml" global-git-status
+    uv run --project "$SCRIPT_DIR/../../tools" global-git-status
 }
 
 # Toggle white noise on loop, usually bound to hotkey `super` + `space`

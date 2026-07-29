@@ -6,12 +6,11 @@ import sys
 import time
 import traceback
 from pathlib import Path
-from typing import Any, Dict, List, Type, cast
+from typing import Any, cast
 
 import click
 import psutil
 import requests
-
 
 CONFIG_FILE = (Path(__file__).parent / "../../tools/statusbar_conf.json").resolve()
 CACHE_ROOT = (Path(__file__).parent / "../../tools/.cache").resolve()
@@ -23,25 +22,25 @@ def load_cache(name: str, default: Any) -> Any:
     CACHE_ROOT.mkdir(exist_ok=True)
 
     try:
-        file = open(CACHE_ROOT / f"{name}.json", "r")
+        with open(CACHE_ROOT / f"{name}.json") as file:
+            return json.load(file)
     except FileNotFoundError:
         return default
-    return json.load(file)
 
 
 def store_cache(name: str, data: Any) -> Any:
     CACHE_ROOT.mkdir(exist_ok=True)
 
-    file = open(CACHE_ROOT / f"{name}.json", "w")
-    return json.dump(data, file)
+    with open(CACHE_ROOT / f"{name}.json", "w") as file:
+        return json.dump(data, file)
 
 
 class SkipItemException(Exception):
     pass
 
 
-class StatusBarItem(object):
-    def __init__(self, config: Dict[str, Any]) -> None:
+class StatusBarItem:
+    def __init__(self, config: dict[str, Any]) -> None:
         self.config = config
 
     def expiry(self) -> int:
@@ -56,9 +55,7 @@ class Battery(StatusBarItem):
         command = ["acpitool", "-B"]
 
         try:
-            process = subprocess.run(
-                command, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-            )
+            process = subprocess.run(command, capture_output=True, check=False)
         except FileNotFoundError as e:
             raise SkipItemException("acpitool is not installed") from e
 
@@ -77,7 +74,7 @@ class Battery(StatusBarItem):
 
 class Date(StatusBarItem):
     def get_text(self) -> str:
-        return datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        return datetime.datetime.now().strftime("%Y-%m-%d %H:%M")  # noqa: DTZ005 (local time is intentional)
 
 
 class Weather(StatusBarItem):
@@ -97,7 +94,7 @@ class Weather(StatusBarItem):
         data = json.loads(r.text)
 
         temp = int(data["main"]["temp"])
-        weather = list([item["main"] for item in data["weather"]])[0]
+        weather = next(item["main"] for item in data["weather"])
 
         return f"{temp}°C {weather}"
 
@@ -113,9 +110,7 @@ class Spotify(StatusBarItem):
             "string:org.mpris.MediaPlayer2.Player",
             "string:Metadata",
         ]
-        process = subprocess.run(
-            command, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
+        process = subprocess.run(command, capture_output=True, check=False)
 
         if process.returncode != 0:
             raise SkipItemException
@@ -129,7 +124,7 @@ class Spotify(StatusBarItem):
             print("Spotify regex failed", file=sys.stderr)
             raise SkipItemException
 
-        return "{} / {}".format(artist_match.group(1), title_match.group(1))
+        return f"{artist_match.group(1)} / {title_match.group(1)}"
 
 
 class MachineStats(StatusBarItem):
@@ -169,7 +164,7 @@ class MachineStats(StatusBarItem):
         return f"Cpu{cpu} | Mem {memory} | Disk {disk}"
 
 
-STATUSBAR_ITEMS: Dict[str, Type[StatusBarItem]] = {
+STATUSBAR_ITEMS: dict[str, type[StatusBarItem]] = {
     "battery": Battery,
     "date": Date,
     "spotify": Spotify,
@@ -184,7 +179,7 @@ COLOR_HEADERS = [
 
 
 def get_statusbar_item_text(
-    item: str, status_bar_item: StatusBarItem, cache_item: Dict[str, Any]
+    item: str, status_bar_item: StatusBarItem, cache_item: dict[str, Any]
 ) -> str:
     if "error" in cache_item:
         print(f"Found error marker in cache for {item}", file=sys.stderr)
@@ -200,12 +195,13 @@ def get_statusbar_item_text(
 
 @click.command()
 def tmux_statusbar() -> None:
-    config = json.load(open(CONFIG_FILE, "r"))
+    with open(CONFIG_FILE) as file:
+        config = json.load(file)
 
     cache = load_cache("statusbar", {})
     items = config["statusbar"]["items"]
 
-    statusbar: List[str] = []
+    statusbar: list[str] = []
 
     for item in items:
         cache_item = cache.get(item, {})
@@ -223,7 +219,7 @@ def tmux_statusbar() -> None:
         except SkipItemException:
             print(f"Skipping {item}", file=sys.stderr)
             continue
-        except Exception:
+        except Exception:  # noqa: BLE001 (one bad item must not break the rest of the statusbar)
             traceback.print_exc(file=sys.stderr)
             error = True
             continue

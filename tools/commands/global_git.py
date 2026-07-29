@@ -1,5 +1,5 @@
 import subprocess
-from typing import List
+import sys
 
 import click
 
@@ -19,9 +19,9 @@ def colorize_text(text: str, color: str) -> str:
     return "{}{}{}".format(markers[color], text, markers["reset"])
 
 
-def run_command(command: str) -> List[str]:
+def run_command(command: str) -> list[str]:
     process: subprocess.CompletedProcess[bytes] = subprocess.run(
-        command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True
+        command, shell=True, capture_output=True, check=True
     )
 
     return process.stdout.decode("utf-8").strip().split("\n")
@@ -73,7 +73,7 @@ def global_git_status() -> None:
                 "red",
             )
         )
-        exit(1)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
