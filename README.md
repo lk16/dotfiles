@@ -49,7 +49,7 @@ fi
 
 * Add symlink
 ```sh
-ln -s $DOTFILES_ROOT/dotfiles/tmux/config.tmux ~/.tmux.conf
+ln -s $DOTFILES_ROOT/dotfiles/tmux/conf ~/.tmux.conf
 ```
 ### Links
 - [Markdown viewer browser plugin](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk?hl=en)
