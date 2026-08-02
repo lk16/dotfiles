@@ -153,9 +153,6 @@ alias c='xclip -in -selection clipboard'
 # common typo
 alias gig='git'
 
-# show git graph
-alias gg="git log --graph --oneline --decorate --all"
-
 # git status shortcut
 alias ggs="git status"
 
@@ -192,6 +189,18 @@ function gp() {
         git push -u origin $branch $@
     fi
 }
+
+# gg used to be an alias
+unalias gg 2>/dev/null
+
+# git graph, modified to show sandbox refs colored
+function gg() {
+    git log --graph --oneline --decorate=full --color=always --clear-decorations --all "$@" \
+        | sed -E $'s/(refs\\/sandboxes\\/[^)\x1b]*)/\x1b[34m\\1\x1b[0m/' \
+        | less -R
+}
+
+
 
 # global git status - show repositories with uncommitted and unpushed changes
 # This command finds folders in the home directory that contain a .git folder up to 4 levels deep
