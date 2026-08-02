@@ -196,7 +196,7 @@ unalias gg 2>/dev/null
 # git graph, modified to show sandbox refs colored
 function gg() {
     git log --graph --oneline --decorate --color=always --clear-decorations --all "$@" \
-        | sed -E $'s/(refs\\/sandboxes\\/[^)\x1b]*)/\x1b[34m\\1\x1b[0m/' \
+        | sed -E $'s/(refs\\/sandboxes\\/[^),]*)/\x1b[34m\\1\x1b[0m/g' \
         | less -R
 }
 
