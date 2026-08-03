@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - name: Install dependencies
+        working-directory: tools
+        run: uv sync --locked
+      - name: Run ruff check
+        working-directory: tools
+        run: uv run ruff check .
+      - name: Run ruff format check
+        working-directory: tools
+        run: uv run ruff format --check .
+      - name: Run mypy
+        working-directory: tools
+        run: uv run mypy --strict commands
