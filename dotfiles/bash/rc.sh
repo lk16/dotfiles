@@ -47,11 +47,11 @@ export _TYPER_STANDARD_TRACEBACK=1
 
 # --- Javascript ---
 
-# if [ -d "$HOME/.nvm" ]; then
-#     export NVM_DIR="$HOME/.nvm"
-#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# fi
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # --- Prompt and shell options ---
 
@@ -197,7 +197,7 @@ unalias gg 2>/dev/null
 function gg() {
     git log --graph --oneline --decorate --color=always --clear-decorations --all "$@" \
         | sed -E $'s/(refs\\/sandboxes\\/[^),\x1b]*)/\x1b[34m\\1\x1b[0m/g' \
-        | less -R
+        | less -RX
 }
 
 
