@@ -53,6 +53,7 @@ if [ -d "$HOME/.nvm" ]; then
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+
 # --- Prompt and shell options ---
 
 # don't put duplicate lines in the history.
@@ -243,3 +244,8 @@ function alert() {
 if which direnv > /dev/null; then
     eval "$(direnv hook bash)"
 fi
+
+# --- k9s ---
+
+# Prevent k9s UI glitches by setting DO access token to empty value
+test -z "$DIGITALOCEAN_ACCESS_TOKEN" || DIGITALOCEAN_ACCESS_TOKEN=''
